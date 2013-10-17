@@ -1,0 +1,9 @@
+
+<form action="/gradients" method="post" role="form" class="create-form">
+  <div class="form-group">
+    <label for="gradient">Text</label>
+    <br>
+    <textarea id="gradient" name="gradient[gradient]" class="form-control" rows="4" maxlength="200"><%= @gradient.gradient %></textarea>
+  </div>
+  <button type="submit" class="submit">Submit</button>
+</form>

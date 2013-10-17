@@ -1,0 +1,13 @@
+<div class="gradients">
+	<% @gradients.each do |gradient| %>
+		<div class="gradient-container">
+			<div class="gradient">
+			    <%= gradient.gradient %>
+				Submitted by: <%= gradient.author %> at <%= gradient.created_at %>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+
