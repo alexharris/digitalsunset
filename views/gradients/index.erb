@@ -1,4 +1,4 @@
-<div class="gradients">
+<!-- <div class="gradients">
 	<% @gradients.each do |gradient| %>
 		<div class="gradient-container">
 			<div class="gradient">
@@ -11,3 +11,37 @@
 
 
 
+ -->
+
+
+<div class="main-container">
+	<div class="controls">
+		<br />
+		<button type="button" class="add-new btn btn-success btn-sm">new color</button>
+		<br /><br />
+		<button type="button" class="save-button btn btn-primary btn-sm">save</button>
+	</div>          
+
+	<div class="slider"> </div>
+
+	<canvas id="gradient" width="320" height="320"></canvas>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-target="modal">
+	<div class="modal-dialog">
+	  	<div class="modal-content">
+			<div class="modal-header">
+		  	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		  	<h4 class="modal-title">Save this image</h4>
+			</div>
+			<div class="modal-body">
+				<div class="img"></div>
+				<br />
+				<h4>Press and hold down on image to save</h4>
+			</div>
+			<div class="modal-footer">
+		  		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+	  	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
