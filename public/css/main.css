@@ -61,17 +61,21 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-   .main-container {
-        position: relative;
-        width: 300px;
-        margin: 0 auto;
-   }
+.main-container {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
 
-    .controls {
-        position: absolute;
-        right: 10px;
-        top: 0px;
-    }
+.navbar {
+    z-index: 0;
+}
+
+.controls {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
 
 .colors {
     float: left;
@@ -95,10 +99,10 @@ textarea {
 }
 
 .slider {
-    height: 272px;
+    height: 300px;
     position: absolute;
     left: 0px;
-    top: 22px;
+    top: 0px;
 }
 
 .ui-slider .ui-slider-handle {
@@ -142,14 +146,26 @@ div.pick-a-color-markup .color-preview  {
     float: left;
 }
 
+.modal-dialog li {
+    list-style-type: none;
+}
+
+
 .dropdown-toggle {
     background-color: transparent;
     width: auto;
     height: auto;
 }
 
-.dropdown-menu {
-    top:0px;
+.btn-group {
+    position: auto;
+}
+
+div.pick-a-color-markup .color-menu{
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 1005;
 }
 
 

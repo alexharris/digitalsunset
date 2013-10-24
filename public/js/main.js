@@ -100,8 +100,8 @@ saveCanvas = function(){
 	$('.save-button').click(function(){
 		var canvas = document.getElementById("gradient");
 		var img    = canvas.toDataURL("image/png");
-		$('.modal-body .img').replaceWith('<div class="img"></div><img src="'+img+'"/></div>');
-		$('.modal').modal();
+		$('.modal-save .modal-body .img').replaceWith('<div class="img"></div><img src="'+img+'"/></div>');
+		$('.modal-save').modal();
 	});
 }
 
@@ -111,19 +111,26 @@ cleanUpColorPicker = function(){
 	$('.basicColors-tab').hide();
 	$('.advanced-tab').addClass('tab-active');
 	// content
-	$('.basicColors-content').remove();
 	$('.basicColors-content').hide();
 	$('.advanced-content').removeClass('inactive-content');
 	$('.advanced-content').addClass('active-content');
 	$('.color-menu-tabs').hide();
-
 }
+
+// movePickerToModal = function(){
+
+// 	$('.pick-a-color-markup .btn-group').click(function(){
+// 		advancedContent = $(this).find('.advanced-content');
+
+
+// 		advancedContent.hide();
+
+// 	})
+// }
 
 
 //Load methods on document ready
 $(document).ready(function(){
-
-
 	
 	// create initial handles
 	createColorStopHandle(0);
@@ -138,7 +145,9 @@ $(document).ready(function(){
 	// print canvas to jpg
 	saveCanvas();
 
+	//remove basic color tab, default to active tab...kinda crappy
 	cleanUpColorPicker();
+
 
 });
 
