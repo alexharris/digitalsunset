@@ -63,6 +63,8 @@ textarea {
 
    .main-container {
         position: relative;
+        width: 300px;
+        margin: 0 auto;
    }
 
     .controls {
@@ -82,9 +84,9 @@ textarea {
 
 #gradient {
     width:100%;
-    padding-left: 80px;
+    /*padding-left: 80px;*/
     height: 300px;
-    max-height: 500px;
+    /*max-height: 500px;*/
     z-index: -100;
 }
 
@@ -92,19 +94,48 @@ textarea {
     width: 100%;
 }
 
-.slider{
-    height: 100%;
-    max-height: 800px;
+.slider {
+    height: 272px;
     position: absolute;
     left: 0px;
+    top: 22px;
 }
 
 .ui-slider .ui-slider-handle {
     margin-left: 10px;
-    background-color: #CACACA;
-    width: 80px;
-    height: 28px;
-    border-radius: 10px 0 0 10px;
+    background-color: #fff;
+    width: 40px;
+    height: 20px;
+}
+
+.ui-slider .ui-slider-handle:after {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: transparent url('../images/up-down.png') 50% 50% no-repeat;
+    float: right;
+}
+
+div.pick-a-color-markup .btn-group .color-dropdown, div.pick-a-color-markup .btn-group .color-dropdown.no-hex {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px;
+    -moz-border-radius: 0;
+    -webkit-box-shadow: 0;
+}
+
+div.pick-a-color-markup .color-preview  {
+    border: none;
+    border-radius: 0px;
+    -moz-border-radius: 0;
+    -webkit-box-shadow: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .pick-a-color-markup {
