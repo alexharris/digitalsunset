@@ -61,7 +61,8 @@ callPicker = function(input){
 	$(input).pickAColor({
 		showSavedColors: false,
 		showSpectrum: false,
-		showHexInput: false
+		showHexInput: false,
+		// showAdvanced: false
 	});
 }
 
@@ -104,6 +105,20 @@ saveCanvas = function(){
 	});
 }
 
+cleanUpColorPicker = function(){
+	// tabs
+	$('.basicColors-tab').removeClass('tab-active');
+	$('.basicColors-tab').hide();
+	$('.advanced-tab').addClass('tab-active');
+	// content
+	$('.basicColors-content').remove();
+	$('.basicColors-content').hide();
+	$('.advanced-content').removeClass('inactive-content');
+	$('.advanced-content').addClass('active-content');
+	$('.color-menu-tabs').hide();
+
+}
+
 
 //Load methods on document ready
 $(document).ready(function(){
@@ -122,6 +137,8 @@ $(document).ready(function(){
 
 	// print canvas to jpg
 	saveCanvas();
+
+	cleanUpColorPicker();
 
 });
 
