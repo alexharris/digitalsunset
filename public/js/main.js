@@ -1,15 +1,7 @@
 var colorStopHandleArray = []; //array of handles for slider
 var colors = ['ff4800','00ffa2']; //create array for building gradient
-var currentColorStopValues = [300, 0]; //initial values for handle position
+var currentColorStopValues = [240, 0]; //initial values for handle position
 
-
-
-createColorStopHandle = function(handlePosition){
-	newHandle = handlePosition;
-	colorStopHandleArray.push(newHandle);
-	initSlider(); //reinit to include new handle
-	addNewColor(); // create pickacolor for new handle
-}
 
 addColorStopHandle = function(){
 	$('.add-new').click(function(){
@@ -18,24 +10,24 @@ addColorStopHandle = function(){
 	});
 }
 
+createColorStopHandle = function(handlePosition){
+	newHandle = handlePosition;
+	colorStopHandleArray.push(newHandle);
+	initSlider(); //reinit to include new handle
+	addNewColor(); // create pickacolor for new handle
+}
+
+
 initSlider = function(){
 	$('.slider').slider({
 		orientation: 'vertical',
-		range: [0, 300],
+		range: [0, 240],
 		values: colorStopHandleArray,
 		stop: function( event, ui ) {
 			currentColorStopValues = [];
 			updateColorStopArray();
         	createGradient(colors);
 	    }
-	});
-}
-
-updateColorStopArray = function(){
-	$('.ui-slider-handle').each(function(){
-		offset = $(this).offset();
-		offsetTop = offset.top;
-		currentColorStopValues.push(offsetTop);
 	});
 }
 
@@ -55,6 +47,21 @@ addNewColor = function() {
 		}
 	});
 }
+
+updateColorStopArray = function(){
+	$('.ui-slider-handle').each(function(){
+		offset = $(this).position();
+		offsetTop = offset.top;
+		//sometimes the handle slides too far and this value gets negative. clean it up.
+		if (offsetTop < 0) {
+			offsetTop = 0; 
+		}
+		console.log('offset top: ' + offsetTop);
+		currentColorStopValues.push(offsetTop);
+	});
+}
+
+
 
 //calls pick-a-color on an input
 callPicker = function(input){
@@ -81,7 +88,7 @@ updateColorArray = function(input){
 createGradient = function(colors){
 	var gradient = document.getElementById("gradient");
 	var grad_context = gradient.getContext("2d");
-	var my_gradient = grad_context.createLinearGradient(0, 0, 0, 320);
+	var my_gradient = grad_context.createLinearGradient(0, 0, 0, 240);
 	if(colors.length <= 1){
 		return;
 	} else {
@@ -90,10 +97,10 @@ createGradient = function(colors){
 	for (i = 0; i < colors.length; ++i) {
 		console.log('colors: ' + colors);
 		console.log('colorstop values: ' + currentColorStopValues);
-		my_gradient.addColorStop((currentColorStopValues[i] / 380), colors[i]);
+		my_gradient.addColorStop((currentColorStopValues[i] / 240), colors[i]);
 	}
 	grad_context.fillStyle = my_gradient;
-	grad_context.fillRect(0, 0, 320, 320);
+	grad_context.fillRect(0, 0, 240, 240);
 }
 
 saveCanvas = function(){
@@ -134,7 +141,7 @@ $(document).ready(function(){
 	
 	// create initial handles
 	createColorStopHandle(0);
-	createColorStopHandle(300);
+	createColorStopHandle(240);
 
 	// click to add new handle
 	addColorStopHandle();
