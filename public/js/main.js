@@ -145,8 +145,7 @@ cleanUpColorPicker = function(){
 //Load methods on document ready
 $(document).ready(function(){
 
-	document.documentElement.requestFullScreen();
-	
+
 	// create initial handles
 	createColorStopHandle(0);
 	createColorStopHandle(240);
