@@ -109,6 +109,10 @@ saveCanvas = function(){
 		var img    = canvas.toDataURL("image/png");
 		$('.modal-save .modal-body .img').replaceWith('<div class="img"></div><img src="'+img+'"/></div>');
 		$('.modal-save').modal();
+
+		//save to form
+		gradientForm = document.getElementById("form-gradient");
+		gradientForm.value = img;
 	});
 }
 

@@ -1,9 +1,12 @@
 
 <form action="/gradients" method="post" role="form" class="create-form">
   <div class="form-group">
-    <label for="gradient">Text</label>
+    <label for="gradient">Author</label>
     <br>
-    <textarea id="gradient" name="gradient[gradient]" class="form-control" rows="4" maxlength="200"><%= @gradient.gradient %></textarea>
+    <textarea id="gradient" name="gradient[author]" class="form-control" rows="4" maxlength="200"><%= @gradient.author %></textarea>
+    <label for="gradient">Note</label>
+    <br>
+    <textarea id="gradient" name="gradient[note]" class="form-control" rows="4" maxlength="200"><%= @gradient.note %></textarea>
   </div>
   <button type="submit" class="submit">Submit</button>
 </form>

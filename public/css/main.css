@@ -162,7 +162,11 @@ div.pick-a-color-markup .color-menu{
     text-align: center;
 }
 
+/* gallery */
 
+.gallery img {
+    width: 100%;
+}
 
 
 

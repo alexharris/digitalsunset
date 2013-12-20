@@ -3,7 +3,7 @@ require 'sinatra/activerecord'
 require './config/environments' #database configuration
 
 get '/' do
-    @gradients = Gradient.order("created_at DESC")
+    @gradient = Gradient.new
     erb :"gradients/index"
 end
 
@@ -20,6 +20,12 @@ post '/gradients' do
     erb :"gradients/create"
   end
 end
+
+get '/gradients/show' do
+  @gradients = Gradient.order("created_at DESC")
+  erb :"gradients/show"
+end
+
 
 class Gradient < ActiveRecord::Base
 end

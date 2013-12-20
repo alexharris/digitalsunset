@@ -29,7 +29,20 @@
 			<div class="modal-body">
 				<div class="img"></div>
 				<br />
-				<h4>Press and hold down on image to save</h4>
+
+				<form action="/gradients" method="post" role="form" class="create-form">
+				  <div class="form-group">
+				  	<input id="form-gradient" type="hidden" name="gradient[gradient]" class="form-control" rows="2"><%= @gradient.gradient %></textarea>
+				    <label for="author">Author</label>
+				    <br />
+				    <textarea id="author" name="gradient[author]" class="form-control" rows="2" maxlength="100"><%= @gradient.author %></textarea><hr />
+				    <label for="note">Note</label>
+				    <br />
+				    <textarea id="note" name="gradient[note]" class="form-control" rows="2" maxlength="100"><%= @gradient.note %></textarea><hr />
+				  </div>
+				  <button type="submit" class="submit">Submit</button>
+				</form>
+
 			</div>
 			<div class="modal-footer">
 		  		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -37,3 +50,4 @@
 	  	</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+

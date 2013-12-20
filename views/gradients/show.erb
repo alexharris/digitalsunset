@@ -1,0 +1,11 @@
+<div class="container gallery">
+	<div class="row">
+		<% @gradients.each do |gradient| %>
+			<div class="col-xs-12 col-md-4">
+				<img src="<%= gradient.gradient %>" /><br />
+				<!-- author: <%= gradient.author %><br />
+				note: <%= gradient.note %><br /> -->
+			</div>
+		<% end %>
+	</div>
+</div>
