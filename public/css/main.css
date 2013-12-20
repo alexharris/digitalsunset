@@ -63,6 +63,21 @@ textarea {
 
 .wrapper {
     width: 100%;
+    height: 100%;
+}
+
+.gradient-bg {
+    background: #FFF200 url(images/fallback-gradient.png) no-repeat; 
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ED2590), to(#FFF200));
+    background-image: -webkit-linear-gradient(top, #ED2590, #FFF200); 
+    background-image:    -moz-linear-gradient(top, #ED2590, #FFF200);
+    background-image:     -ms-linear-gradient(top, #ED2590, #FFF200);
+    background-image:      -o-linear-gradient(top, #ED2590, #FFF200);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 800px;
 }
 
 .main-container {

@@ -2,10 +2,17 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './config/environments' #database configuration
 
+get '/', :agent => /iPhone/ do
+    @gradient = Gradient.new
+    erb :"gradients/iPhone"
+end
+
 get '/' do
     @gradient = Gradient.new
     erb :"gradients/index"
 end
+
+
 
 get '/gradients/create' do
   @gradient = Gradient.new
