@@ -2,6 +2,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'compass';
+@import 'typography';
 @import 'variables';
 
 .browsehappy {
@@ -12,11 +13,24 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 /* Space out content a bit */
+
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     padding-top: 20px;
-    padding-bottom: 20px;
-    @include background-image(linear-gradient($neonPink, $yellow));
+    // padding-bottom: 20px;
+    @include background-image(linear-gradient($neonPink, $yellow, $yellow, $yellow, $neonPink, $neonPink));
     background-repeat: no-repeat;
+    font-size: 2em;
+    color: $black;
+    border-top: 10px solid $black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    margin: 0 0 $itemSpacing 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -27,24 +41,12 @@ body {
     padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
-
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
@@ -92,4 +94,112 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+// DIGITAL 
+
+.header {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.logo {
+    padding-top: 40px;
+    font-size: 4em;
+    text-transform: uppercase;
+    img {
+        max-width: 100%;
+    }
+}
+
+.tag-line {
+    padding-top: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.full-size-icon {
+    padding-bottom: $itemSpacing;
+    font-size: 2em;
+}
+
+.nav {
+    & > li {
+        display: inline-block;
+        a {
+            color: $black;
+            @extend .full-size-icon;
+            &:hover {
+                background-color: transparent;
+                color: $white;
+            }
+        }
+    }
+}
+
+.row {
+    padding: 80px 0;
+    &:first-of-type {
+        padding: 0 0 80px;
+    }
+}
+
+.full-width-row {
+    display: inline-block;
+    width: 100%;
+}
+
+.black-row:before, .black-row:after {
+    content: "";
+    position: absolute;
+    background: $black;  /* Match the background */
+    top: 0;
+    bottom: 0;
+    width: 9999px;   /* some huge width */
+    display: block;
+}
+
+.black-row:before {
+    right: 100%;
+}
+
+.black-row:after {
+    left: 100%;
+}
+
+.black-row {
+    position: relative;
+    background-color: $black;
+    color: $white;
+    display: inline-block;
+}
+
+.white-row:before, .white-row:after {
+    content: "";
+    position: absolute;
+    background: $white;  /* Match the background */
+    top: 0;
+    bottom: 0;
+    width: 9999px;   /* some huge width */
+    display: block;
+}
+
+.white-row:before {
+    right: 100%;
+}
+
+.white-row:after {
+    left: 100%;
+}
+
+.white-row {
+    position: relative;
+    background-color: $white;
+    display: inline-block;
+}
+
+.footer {
+    font-size: .8em;
 }

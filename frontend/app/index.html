@@ -12,6 +12,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -28,36 +29,62 @@
 
         <div class="container">
             <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="nav">
+                    <li class="active"><a href="#" class="icon-smiley center-icon"></a></li>
+                    <li><a href="#" class="icon-question center-icon"></a></li>
+                    <li><a href="#" class="icon-info center-icon"></a></li>
                 </ul>
-                <h3 class="text-muted">digitalsunset</h3>
+                <div class="logo"><img src="images/digital-sunset-logo.png" /></div>
+                <div class="tag-line"><strong><em>*Catch a sunset, put it in your pocket*</em></strong></div>
             </div>
 
-            <div class="jumbotron">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-            </div>
+            <div class="row center">
+                <div class="col-lg-12">
 
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-                    <h4>Modernizr</h4>
-                    <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
+                    <p><strong>We all that pictures of the sunset suck. What's better than a picture? The real sunset, duh. But second to that might be the precise digital gradient you can make with Digital Sunset. Recreate the magic magic of a sunset on your dumb smartphone.</strong></p>
+                    <br />
+                    <p><em>Sunsets are ephemeral, but SVGs are forever.</em></p>
 
                 </div>
             </div>
-
-            <div class="footer">
-                <p>♥ from the Yeoman team</p>
+            <div class="row white-row">
+                <div class="col-lg-6 center">
+                    <div class="icon-info full-size-icon"></div>
+                    <p><strong>Digital Sunset is mostly for your phone.</strong></p>
+                    <p><strong>Try it there.</strong></p>
+                    <p><strong>Put the biggest most impossible thing into a little digital square.</strong></p>
+                </div>
+                <div class="col-lg-6 center">
+                    <img src="images/phone.png" />
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-lg-12">
+                    <div class="icon-question full-size-icon"></div>
+                    <p><strong>What is worth looking at?</strong></p>
+                    <p><strong>If you take a cell phone pic of the sunset, does that make it less special? What if you send that cell phone pic to your coworker, or your sister, or the person you want to be your boyfriend, does that make it more special?</strong></p>
+                    <p><strong>If you look at the sunset, will it hurt your corneas?<br />
+                                            Will it hurt you psyche?</strong></p>
+                    <p><strong>Is this notetaking or souvenir gathering?</strong></p>
+                    <p><strong>If photographs are experience captured, what is a cell phone pic of a sunset?</strong></p>
+                </div>
+            </div>
+            <div class="footer row black-row">
+                <section class="full-width-row">
+                    <div class="col-lg-6 center">
+                        <div class="icon-smiley full-size-icon"></div>
+                        <p>Digital Sunset is an app project by Alex Harris and Nicole Lavelle. It is simultaneously very important and totally useless.</p>
+                        <p>They are excited to see what you do with it. Tag your things with the hashtag #digitalsunsetapp so we can peep your gradients.</p>
+                    </div>
+                    <div class="col-lg-6 center">
+                        <p>Some other info.</p>
+                        <p>digitalsunsetapp.com<br />
+                            #digitalsunsetapp</p>
+                        <p>© 2013 or whatever</p>
+                        <p>digitalsunset was made with heroku thing</p>
+                        <p>Also digitalsunsetapp.github.io</p>
+                    </div>
+                </section>
             </div>
 
         </div>
@@ -66,6 +93,8 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
