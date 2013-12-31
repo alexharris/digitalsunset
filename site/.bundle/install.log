@@ -1,0 +1,169 @@
+# Logfile created on 2013-12-26 20:54:42 -0800 by logger.rb/36483
+I, [2013-12-26T20:54:42.553969 #46748]  INFO -- : 0:  i18n (0.6.5) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/i18n-0.6.5.gemspec
+I, [2013-12-26T20:54:42.554233 #46748]  INFO -- : 0:  minitest (4.7.5) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/minitest-4.7.5.gemspec
+I, [2013-12-26T20:54:42.554424 #46748]  INFO -- : 0:  multi_json (1.8.2) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/multi_json-1.8.2.gemspec
+I, [2013-12-26T20:54:42.554614 #46748]  INFO -- : 0:  atomic (1.1.14) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/atomic-1.1.14.gemspec
+I, [2013-12-26T20:54:42.554798 #46748]  INFO -- : 0:  thread_safe (0.1.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/thread_safe-0.1.3.gemspec
+I, [2013-12-26T20:54:42.554985 #46748]  INFO -- : 0:  tzinfo (0.3.38) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/tzinfo-0.3.38.gemspec
+I, [2013-12-26T20:54:42.555169 #46748]  INFO -- : 0:  activesupport (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activesupport-4.0.0.gemspec
+I, [2013-12-26T20:54:42.555352 #46748]  INFO -- : 0:  builder (3.1.4) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/builder-3.1.4.gemspec
+I, [2013-12-26T20:54:42.555536 #46748]  INFO -- : 0:  activemodel (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activemodel-4.0.0.gemspec
+I, [2013-12-26T20:54:42.555718 #46748]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2013-12-26T20:54:42.555900 #46748]  INFO -- : 0:  arel (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/arel-4.0.0.gemspec
+I, [2013-12-26T20:54:42.556080 #46748]  INFO -- : 0:  activerecord (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activerecord-4.0.0.gemspec
+I, [2013-12-26T20:54:42.556263 #46748]  INFO -- : 0:  bond (0.4.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/bond-0.4.3.gemspec
+E, [2013-12-26T20:54:42.741567 #46748] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+    /Users/alexharris/.rbenv/versions/2.0.0-p247/bin/ruby extconf.rb 
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/ruby
+	--with-pg
+	--without-pg
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/
+
+
+Gem files will remain installed in /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/pg-0.17.0 for inspection.
+Results logged to /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/pg-0.17.0/ext/gem_make.out
+
+/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/builder.rb:60:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:37:in `block in build'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:18:in `build'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:678:in `block (2 levels) in build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:677:in `chdir'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:677:in `block in build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:652:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:652:in `build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:218:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/source/rubygems.rb:94:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:97:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:15:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/cli.rb:257:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/cli.rb:10:in `start'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/bin/bundle:22:in `block in <top (required)>'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/bin/bundle:22:in `<top (required)>'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/bundle:23:in `load'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/bundle:23:in `<main>'
+I, [2013-12-26T20:58:59.800534 #47121]  INFO -- : 0:  i18n (0.6.5) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/i18n-0.6.5.gemspec
+I, [2013-12-26T20:58:59.800819 #47121]  INFO -- : 0:  minitest (4.7.5) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/minitest-4.7.5.gemspec
+I, [2013-12-26T20:58:59.801019 #47121]  INFO -- : 0:  multi_json (1.8.2) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/multi_json-1.8.2.gemspec
+I, [2013-12-26T20:58:59.801202 #47121]  INFO -- : 0:  atomic (1.1.14) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/atomic-1.1.14.gemspec
+I, [2013-12-26T20:58:59.801377 #47121]  INFO -- : 0:  thread_safe (0.1.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/thread_safe-0.1.3.gemspec
+I, [2013-12-26T20:58:59.801556 #47121]  INFO -- : 0:  tzinfo (0.3.38) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/tzinfo-0.3.38.gemspec
+I, [2013-12-26T20:58:59.801733 #47121]  INFO -- : 0:  activesupport (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activesupport-4.0.0.gemspec
+I, [2013-12-26T20:58:59.801911 #47121]  INFO -- : 0:  builder (3.1.4) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/builder-3.1.4.gemspec
+I, [2013-12-26T20:58:59.802096 #47121]  INFO -- : 0:  activemodel (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activemodel-4.0.0.gemspec
+I, [2013-12-26T20:58:59.802271 #47121]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2013-12-26T20:58:59.802447 #47121]  INFO -- : 0:  arel (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/arel-4.0.0.gemspec
+I, [2013-12-26T20:58:59.802624 #47121]  INFO -- : 0:  activerecord (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activerecord-4.0.0.gemspec
+I, [2013-12-26T20:58:59.802797 #47121]  INFO -- : 0:  bond (0.4.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/bond-0.4.3.gemspec
+E, [2013-12-26T20:58:59.970490 #47121] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+    /Users/alexharris/.rbenv/versions/2.0.0-p247/bin/ruby extconf.rb 
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/ruby
+	--with-pg
+	--without-pg
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/
+
+
+Gem files will remain installed in /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/pg-0.17.0 for inspection.
+Results logged to /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/pg-0.17.0/ext/gem_make.out
+
+/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/builder.rb:60:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:37:in `block in build'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:18:in `build'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:678:in `block (2 levels) in build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:677:in `chdir'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:677:in `block in build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:652:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:652:in `build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:218:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/source/rubygems.rb:94:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:97:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:15:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/cli.rb:257:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/cli.rb:10:in `start'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/bin/bundle:22:in `block in <top (required)>'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/bin/bundle:22:in `<top (required)>'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/bundle:23:in `load'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/bundle:23:in `<main>'
+I, [2013-12-26T21:08:33.256469 #47575]  INFO -- : 0:  i18n (0.6.5) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/i18n-0.6.5.gemspec
+I, [2013-12-26T21:08:33.256757 #47575]  INFO -- : 0:  minitest (4.7.5) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/minitest-4.7.5.gemspec
+I, [2013-12-26T21:08:33.256951 #47575]  INFO -- : 0:  multi_json (1.8.2) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/multi_json-1.8.2.gemspec
+I, [2013-12-26T21:08:33.257138 #47575]  INFO -- : 0:  atomic (1.1.14) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/atomic-1.1.14.gemspec
+I, [2013-12-26T21:08:33.257326 #47575]  INFO -- : 0:  thread_safe (0.1.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/thread_safe-0.1.3.gemspec
+I, [2013-12-26T21:08:33.257522 #47575]  INFO -- : 0:  tzinfo (0.3.38) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/tzinfo-0.3.38.gemspec
+I, [2013-12-26T21:08:33.257707 #47575]  INFO -- : 0:  activesupport (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activesupport-4.0.0.gemspec
+I, [2013-12-26T21:08:33.257878 #47575]  INFO -- : 0:  builder (3.1.4) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/builder-3.1.4.gemspec
+I, [2013-12-26T21:08:33.258065 #47575]  INFO -- : 0:  activemodel (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activemodel-4.0.0.gemspec
+I, [2013-12-26T21:08:33.258239 #47575]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2013-12-26T21:08:33.258421 #47575]  INFO -- : 0:  arel (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/arel-4.0.0.gemspec
+I, [2013-12-26T21:08:33.258635 #47575]  INFO -- : 0:  activerecord (4.0.0) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/activerecord-4.0.0.gemspec
+I, [2013-12-26T21:08:33.258807 #47575]  INFO -- : 0:  bond (0.4.3) from /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/bond-0.4.3.gemspec
+E, [2013-12-26T21:08:33.421751 #47575] ERROR -- : Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+    /Users/alexharris/.rbenv/versions/2.0.0-p247/bin/ruby extconf.rb 
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/ruby
+	--with-pg
+	--without-pg
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/
+
+
+Gem files will remain installed in /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/pg-0.17.0 for inspection.
+Results logged to /Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/pg-0.17.0/ext/gem_make.out
+
+/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/builder.rb:60:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:37:in `block in build'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:18:in `build'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:678:in `block (2 levels) in build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:677:in `chdir'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:677:in `block in build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:652:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:652:in `build_extensions'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/rubygems/installer.rb:218:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/source/rubygems.rb:94:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:294:in `install_sequentially'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:97:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/installer.rb:15:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/cli.rb:257:in `install'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/cli.rb:10:in `start'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/bin/bundle:22:in `block in <top (required)>'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/bundler-1.5.0/bin/bundle:22:in `<top (required)>'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/bundle:23:in `load'  \n/Users/alexharris/.rbenv/versions/2.0.0-p247/bin/bundle:23:in `<main>'

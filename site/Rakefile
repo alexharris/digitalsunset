@@ -1,2 +1,2 @@
 require './app'
-require 'sinatra/active_record/rake' 
+require 'sinatra/activerecord/rake' 

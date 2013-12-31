@@ -1,0 +1,72 @@
+body.app {
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	// border-top: 0px solid #000;
+	min-width: 320px;
+	max-height: 100%;
+}
+
+.app {
+	.header {
+		height: 53px;
+		width: 100%;
+		background-color: #444;
+		padding: 10px;
+		margin: 0;
+		.app-logo {
+			height: 33px;
+			img {
+				max-width: 90%;
+			}
+		}
+	}
+	.row {
+		padding: 20px 20px;
+	}
+	.container {
+		margin: 0px;
+		padding: 0px;
+		.sunset-maker {
+			display: none;
+			margin: 0 auto;
+			.slider {
+			    height: 200px;
+			    width: 90%;
+			    margin: 0 auto;
+			    float: left;
+			    position: absolute;
+			    left: 8px;
+			}
+		}
+	}
+	.bottom-nav {
+		height: 60px;
+		background-color: #929292;
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+	}
+}
+
+.interior-button {
+	text-transform: uppercase;
+	padding: 20px 0;
+	&:first-of-type {
+		padding-bottom: 20px;
+	}
+}
+
+.app-start-gradient {
+	padding: 68px 0 20px 0;
+}
+
+.make-a-sunset {
+	padding-top: 10px;
+	color: #FF8351;
+}
+
+#gradient {
+    width: 200px;
+    left: 20px;
+}

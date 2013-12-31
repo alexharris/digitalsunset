@@ -9,100 +9,57 @@
         <title>digitalsunset</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/jquery-minicolors/jquery.minicolors.css" />
+        <link rel="stylesheet" href="bower_components/jquery-slider/jquery.ui.slider.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
-
     </head>
-    <body>
+    <body class="app">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-
         <div class="container">
             <div class="header">
+                <div class="app-logo"><img src="images/app-logo.png" /></div>
+            </div>
+            <div class="row center">
+                <div class="col-md-12">
+                    <div class="start-gradient">
+                        <img class="app-start-gradient" src="images/app-start-gradient.png" /><br />
+                        <div class="make-a-sunset">Make a sunset.</div>
+                    </div>
+                    <div class="sunset-maker">
+                        <div class="add-new interior-button"><span class="icon-plus"></span> new color</div>
+                        <div class="slider"> </div>
+                        <canvas id="gradient" width="200" height="200"></canvas><br />
+                        <div class="interior-button"><span class="icon-checkmark"></span> save sunset</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-nav center">
                 <ul class="nav">
                     <li class="active"><a href="/gradients.html" class="icon-smiley center-icon"></a></li>
                     <li><a href="#" class="icon-question center-icon"></a></li>
                     <li><a href="#" class="icon-info center-icon"></a></li>
                 </ul>
-                <div class="logo"><img src="images/digital-sunset-logo.png" /></div>
-                <div class="tag-line"><strong><em>*Catch a sunset, put it in your pocket*</em></strong></div>
             </div>
-
-            <div class="row center">
-                <div class="col-lg-12">
-                    <span
-                    <p><strong>We all that pictures of the sunset suck. What's better than a picture? The real sunset, duh. But second to that might be the precise digital gradient you can make with Digital Sunset. Recreate the magic magic of a sunset on your dumb smartphone.</strong></p>
-                    <br />
-                    <p><em>Sunsets are ephemeral, but SVGs are forever. </em></p>
-                </div>
-            </div>
-            <div class="row white-row">
-                <div class="col-lg-6 center">
-                    <div class="icon-info full-size-icon"></div>
-                    <p><strong>Digital Sunset is mostly for your phone.</strong></p>
-                    <p><strong>Try it there.</strong></p>
-                    <p><strong>Put the biggest most impossible thing into a little digital square.</strong></p>
-                </div>
-                <div class="col-lg-6 center">
-                    <img src="images/phone.png" />
-                </div>
-            </div>
-            <div class="row center">
-                <div class="col-lg-12">
-                    <div class="icon-question full-size-icon"></div>
-                    <p><strong>What is worth looking at?</strong></p>
-                    <p><strong>If you take a cell phone pic of the sunset, does that make it less special? What if you send that cell phone pic to your coworker, or your sister, or the person you want to be your boyfriend, does that make it more special?</strong></p>
-                    <p><strong>If you look at the sunset, will it hurt your corneas?<br />
-                                            Will it hurt you psyche?</strong></p>
-                    <p><strong>Is this notetaking or souvenir gathering?</strong></p>
-                    <p><strong>If photographs are experience captured, what is a cell phone pic of a sunset?</strong></p>
-                </div>
-            </div>
-            <div class="row center">
-                <div class="col-lg-12">
-                    <!-- <input type="hidden" id="hidden-input" class="demo" value="#db913d"> -->
-                    <div class="slider"> </div>
-                    <canvas id="gradient" width="150" height="150"></canvas><br />
-                    <button type="button" class="add-new btn btn-success btn-sm">new color</button>
-                </div>
-            </div>
-            <div class="footer row black-row">
-                <section class="full-width-row">
-                    <div class="col-lg-6 center">
-                        <div class="icon-smiley full-size-icon"></div>
-                        <p>Digital Sunset is an app project by Alex Harris and Nicole Lavelle. It is simultaneously very important and totally useless.</p>
-                        <p>They are excited to see what you do with it. Tag your things with the hashtag #digitalsunsetapp so we can peep your gradients.</p>
-                    </div>
-                    <div class="col-lg-6 center">
-                        <p>Some other info.</p>
-                        <p>digitalsunsetapp.com<br />
-                            #digitalsunsetapp</p>
-                        <p>© 2013 or whatever</p>
-                        <p>digitalsunset was made with heroku thing</p>
-                        <p>Also digitalsunsetapp.github.io</p>
-                    </div>
-                </section>
-            </div>
-
         </div>
-
-
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/jquery-minicolors/jquery.minicolors.js"></script>
+        <script src="bower_components/jquery-slider/jquery.ui.slider.js"></script>
+        <script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

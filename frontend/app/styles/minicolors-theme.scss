@@ -1,0 +1,30 @@
+
+
+.minicolors {
+	width: 20px;
+}
+
+.minicolors input[type=hidden] + .minicolors-swatch {
+	width: 20px;
+	height: 20px;
+	position: relative;
+    border: none;
+    background: none;
+}
+
+.minicolors:after {
+    content: "";
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    background: transparent url('/images/up-down.png') 50% 50% no-repeat;
+    position: relative;
+    left: 240px;
+    top: -27px;
+}
+
+.minicolors-swatch-color {
+	border-radius: 10px;
+}
+
+
