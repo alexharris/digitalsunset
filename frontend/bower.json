@@ -6,7 +6,8 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
     "jquery-minicolors": "~2.1.1",
-    "jqueryui-touch-punch": ""
+    "jqueryui-touch-punch": "",
+    "jquery.ui.slider": "~1.10.3"
   },
   "devDependencies": {}
 }
