@@ -70,3 +70,52 @@ body.app {
     width: 200px;
     left: 20px;
 }
+
+.slider {
+	position: relative;
+}
+
+.ui-slider-handle {
+	left: 0px;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background-color: #000;
+	border-radius: 10px 0 10px 10px;
+}
+
+.ui-slider-handle:after {
+    content: "";
+    display: inline-block;
+    height: 50px;
+    width: 80px;
+    background: transparent url('/images/up-down.png') 50% 50% no-repeat;
+    position: relative;
+    left: 235px;
+    top: -17px;
+}
+
+.modal-swatch {
+	height: 40px;
+	width: 100%;
+	border: 1px solid #f00;
+	background-color: #000;
+}
+
+//  QUESTION BOX
+
+.question-box {
+	display: none;
+	color: #fff;
+	max-width: 100%;
+	padding: 10px 20px 20px 20px;
+	background-color: #444444;
+	position: absolute;
+	bottom: 60px;
+}
+
+.question-box-close {
+	text-align: right;
+	width: 100%;
+	padding: 4px 0;
+}

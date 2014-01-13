@@ -210,4 +210,17 @@ a:hover, a:focus {
     font-size: .8em;
 }
 
+//  GALLERY
+
+.gallery img {
+    padding: 20px 0 10px 0;
+    width: 100%;
+}
+
+.location {
+    font-size: .7em;
+    color: $grey;
+    text-align: left;
+    margin-bottom: 10px;
+}
 
