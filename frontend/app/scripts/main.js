@@ -4,10 +4,16 @@
 /*jshint latedef:false */
 
 var gradientSize = 200; //size of gradient square
-var colorStopHandleArray = []; //array of handles for slider
+var handleArray = []; //array of handles for slider
 var colors = ['fbb85d','ed257b']; //create array for building gradient
-var newColors = []; //just a temporary placeholder thingy for removeColor()
 var currentColorStopValues = [gradientSize, 0]; //initial values for handle position
+
+function testSomeShit(){
+	console.log('Gradient Size: ' + gradientSize);
+	console.log('Handle Array: ' + handleArray);
+	console.log('Colors: ' + colors);
+	console.log('Current colorstop values: ' + currentColorStopValues);
+}
 
 
 // convert RGB to hex
@@ -34,7 +40,7 @@ function hex(x) {
 }
 
 //add new handle to slider
-function addColorStopHandle(){
+function addHandle(){
 	$('.add-new').click(function(){
 		createColorStopHandle(gradientSize);
 		colors.push('000000');
@@ -55,8 +61,14 @@ function addSliderSwatch(){
 //create new handle object
 function createColorStopHandle(handlePosition){
 	var newHandle = handlePosition;
-	colorStopHandleArray.push(newHandle);
+	handleArray.push(newHandle);
 	initSlider(); //reinit to include new handle
+}
+
+function updateAfterArrayChanges(){
+	currentColorStopValues = [];
+	updateColorStopArray();
+	createGradient(colors);
 }
 
 //load slider with current handles
@@ -64,11 +76,9 @@ function initSlider(){
 	$('.slider').slider({
 		orientation: 'vertical',
 		range: [0, gradientSize],
-		values: colorStopHandleArray,
+		values: handleArray,
 		stop: function( event, ui ) {
-			currentColorStopValues = [];
-			updateColorStopArray();
-			createGradient(colors);
+			updateAfterArrayChanges();
 	    }
 	});
 }
@@ -90,32 +100,20 @@ function addNewColor(){
 	});
 }
 
-newColors = colors;
-console.log('new colors 1: ' + newColors);
-
 function removeColor(){
 	$('.remove-color').click(function(){
 		$('.ui-slider-handle').each(function(i, val){
-
 			if($(this).children('.current-swatch').length === 1){
-				console.log(i + ' ' + newColors[i]);
-				colorStopHandleArray.splice(i,1);
-				newColors.splice(i,1);
-				console.log('colors after splice: ' + newColors);
-				updateColorStopArray();
-				updateColorArray();
-				initSlider();
+				handleArray.splice(i,1);
+				colors.splice(i,1);
+				$(this).remove();
 			}
 		});
-		// $('.ui-slider-swatch').each(function(i){
-		// 	$(this).css('background-color', colors[i]);
-		// });
+		initSlider();
+		updateAfterArrayChanges();
 	});
+	
 }
-
-console.log('new colors 2: ' + newColors);
-
-console.log('hello');
 
 function updateColorStopArray() {
 	$('.ui-slider-handle').each(function(){
@@ -155,7 +153,7 @@ function modalColorOk(){
 	});
 }
 
-// build array of colors from pick-a-color inputs
+// build array of colors from swatch backgrounds
 function updateColorArray(){
 	colors = [];
 	var cssBackgroundColor;
@@ -163,7 +161,6 @@ function updateColorArray(){
 		var cssBackgroundColor = $(this).css('backgroundColor');
 		colors.push(cssBackgroundColor);
 	});
-	
 	createGradient(colors);
 }
 
@@ -221,7 +218,7 @@ function intialHandleLoad(){
 }
 
 function colorHandles(){
-	//color them
+	//color them from color array
 	$('.ui-slider-swatch').each(function(i, val){
 		$(this).css('background', '#' + colors[i]);
 	});
@@ -232,7 +229,7 @@ function colorHandles(){
 $(document).ready(function(){
 
 	// click to add new handle
-	addColorStopHandle();
+	addHandle();
 	
 	//load initial gradient
 	createGradient(colors);
