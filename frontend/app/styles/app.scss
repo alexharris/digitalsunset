@@ -51,9 +51,9 @@ body.app {
 
 .interior-button {
 	text-transform: uppercase;
-	padding: 20px 0;
+	margin: 20px 0;
 	&:first-of-type {
-		padding-bottom: 20px;
+		margin-bottom: 30px;
 	}
 }
 
@@ -76,30 +76,26 @@ body.app {
 }
 
 .ui-slider-handle {
-	left: 0px;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	background-color: #000;
-	border-radius: 10px 0 10px 10px;
+	display: inline-block;
+    height: 20px;
+    width: 40px;
+    background: transparent url('/images/up-down.png') 50% 50% no-repeat;
+    position: absolute;
+    left: 0px;
 }
 
-.ui-slider-handle:after {
-    content: "";
-    display: inline-block;
-    height: 50px;
-    width: 80px;
-    background: transparent url('/images/up-down.png') 50% 50% no-repeat;
-    position: relative;
-    left: 235px;
-    top: -17px;
+.ui-slider-swatch {
+	border: 1px solid #000;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border-radius: 0 10px 10px 10px;
+    left: 255px;
 }
 
 .modal-swatch {
 	height: 40px;
 	width: 100%;
-	border: 1px solid #f00;
-	background-color: #000;
 }
 
 //  QUESTION BOX

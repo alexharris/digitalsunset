@@ -6,6 +6,7 @@
 var gradientSize = 200; //size of gradient square
 var colorStopHandleArray = []; //array of handles for slider
 var colors = ['fbb85d','ed257b']; //create array for building gradient
+var newColors = []; //just a temporary placeholder thingy for removeColor()
 var currentColorStopValues = [gradientSize, 0]; //initial values for handle position
 
 
@@ -37,7 +38,18 @@ function addColorStopHandle(){
 	$('.add-new').click(function(){
 		createColorStopHandle(gradientSize);
 		colors.push('000000');
+		addSliderSwatch();
+		colorHandles();
 	});
+}
+
+function addSliderSwatch(){
+	$('.ui-slider-handle').each(function(i, val){
+		if($(this).children().length === 0){
+			$(this).append('<div class="ui-slider-swatch"></div>');
+		}
+	});
+	addNewColor();
 }
 
 //create new handle object
@@ -45,7 +57,6 @@ function createColorStopHandle(handlePosition){
 	var newHandle = handlePosition;
 	colorStopHandleArray.push(newHandle);
 	initSlider(); //reinit to include new handle
-	addNewColor(); // create pickacolor for new handle
 }
 
 //load slider with current handles
@@ -63,20 +74,48 @@ function initSlider(){
 }
 
 function addNewColor(){
-	$('.ui-slider-handle').click(function(){
-		$('.ui-slider-handle').removeClass('currentHandle');
+	$('.ui-slider-swatch').click(function(){
+		$('.ui-slider-swatch').removeClass('current-swatch');
 		$('.modal-picker').modal();
-		$(this).addClass('current-handle');
-	});
+		$(this).addClass('current-swatch');
+		var currentSwatchColor = $(this).css('background-color');
+		
+		if($('.ui-slider-handle').length <= 2) {
+			$('.remove-color').hide();
+		} else {
+			$('.remove-color').show();
+		}
 
-	// $('.ui-slider-handle').each(function(i){
-	// 	if($(this).children('.minicolors').length > 0){
-	// 		var offset = $(this).offset();
-	// 	} else {
-	// 		updateColorArray(input);
-	// 	}
-	// });
+		callPicker(currentSwatchColor);
+	});
 }
+
+newColors = colors;
+console.log('new colors 1: ' + newColors);
+
+function removeColor(){
+	$('.remove-color').click(function(){
+		$('.ui-slider-handle').each(function(i, val){
+
+			if($(this).children('.current-swatch').length === 1){
+				console.log(i + ' ' + newColors[i]);
+				colorStopHandleArray.splice(i,1);
+				newColors.splice(i,1);
+				console.log('colors after splice: ' + newColors);
+				updateColorStopArray();
+				updateColorArray();
+				initSlider();
+			}
+		});
+		// $('.ui-slider-swatch').each(function(i){
+		// 	$(this).css('background-color', colors[i]);
+		// });
+	});
+}
+
+console.log('new colors 2: ' + newColors);
+
+console.log('hello');
 
 function updateColorStopArray() {
 	$('.ui-slider-handle').each(function(){
@@ -90,26 +129,28 @@ function updateColorStopArray() {
 	});
 }
 
-//calls pick-a-color on an input
-function callPicker(){
+// calls minicolors inside modal
+function callPicker(currentSwatchColor){
 
 	var modalSwatch = $('.modal-swatch');
 
 	$('.minicolors-input').minicolors({
 		theme: 'digitalSunset',
-		defaultValue: '#000000',
+		defaultValue: '',
 		inline: true,
 		change: function(hex, opacity) {
 			modalSwatch.css('background-color', hex);
 		}
 	});
+	//set the picker value to match current slider swatch
+	$('.minicolors-input').minicolors('value',[currentSwatchColor]);
 }
 
 function modalColorOk(){
 	$('.modal-color-ok').click(function(){
 		var swatchColor = $('.modal-swatch').css('background-color');
-		$('.ui-slider-handle.current-handle').css('background-color', swatchColor);
-		$('.ui-slider-handle.current-handle').removeClass('current-handle');
+		$('.ui-slider-swatch.current-swatch').css('background-color', swatchColor);
+		$('.ui-slider-swatch.current-swatch').removeClass('current-swatch');
 		updateColorArray();
 	});
 }
@@ -118,13 +159,9 @@ function modalColorOk(){
 function updateColorArray(){
 	colors = [];
 	var cssBackgroundColor;
-	console.log('initial array: ' + colors);
-	$('.ui-slider-handle').each(function(i, val){
-		console.log(i);
+	$('.ui-slider-swatch').each(function(i, val){
 		var cssBackgroundColor = $(this).css('backgroundColor');
-		console.log('this handle: ' + cssBackgroundColor);
 		colors.push(cssBackgroundColor);
-		console.log('after push: ' + colors);
 	});
 	
 	createGradient(colors);
@@ -141,9 +178,6 @@ function createGradient(colors){
 	}
 	var i;
 	for (i = 0; i < colors.length; ++i) {
-		// console.log(i);
-		// console.log('colors: ' + colors);
-		// console.log('colorstop values: ' + currentColorStopValues);
 		myGradient.addColorStop((currentColorStopValues[i] / gradientSize), colors[i]);
 	}
 	gradContext.fillStyle = myGradient;
@@ -184,9 +218,11 @@ function intialHandleLoad(){
 	// create initial handles
 	createColorStopHandle(0);
 	createColorStopHandle(gradientSize);
+}
 
+function colorHandles(){
 	//color them
-	$('.ui-slider-handle').each(function(i, val){
+	$('.ui-slider-swatch').each(function(i, val){
 		$(this).css('background', '#' + colors[i]);
 	});
 }
@@ -197,20 +233,27 @@ $(document).ready(function(){
 
 	// click to add new handle
 	addColorStopHandle();
-
+	
 	//load initial gradient
 	createGradient(colors);
 
 	//load and color intial handles
 	intialHandleLoad();
 
-	//call picker 
-	callPicker();
+	// add swatches
+	addSliderSwatch();
+
+	addNewColor();
+
+	// color swatches
+	colorHandles();
 
 	modalColorOk();
 
 	// print canvas to jpg
 	saveCanvas();
+
+	removeColor();
 
 	//unhide gradient maker
 	startGradient();
