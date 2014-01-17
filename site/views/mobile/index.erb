@@ -1,0 +1,48 @@
+<div class="row center">
+    <div class=col-md-12>
+        <div class=start-gradient>
+            
+            <img class=app-start-gradient src=images/app-start-gradient.png><br>
+            <div class=make-a-sunset>Make a sunset.</div>
+        </div>
+        <div class=sunset-maker>
+            <div class="add-new interior-button"><span class=icon-plus></span> new color</div>
+            <div class=slider> </div>
+            <canvas id=gradient width=200 height=200></canvas><br>
+            <div class="interior-button btn save-button"><span class=icon-checkmark></span> save sunset</div>
+        </div>
+    </div>
+</div>
+<!-- COLOR Modal -->
+<div class="modal fade modal-picker" tabindex=-1 role=dialog aria-labelledby=save-modal-label aria-hidden=true>
+  <div class=modal-dialog>
+    <div class=modal-content>
+      <div class=modal-body>
+            <input type=hidden id=hidden-input class=minicolors-input value=#000000>
+            <div class=modal-swatch></div>
+      </div>
+      <div class=modal-footer>
+        <button type=button class="btn btn-danger remove-color pull-left" data-dismiss=modal>Remove Color</button>
+        <button type=button class="btn btn-default modal-color-ok" data-dismiss=modal>OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- SAVE Modal -->
+<div class="modal fade modal-save" id=save-modal tabindex=-1 role=dialog aria-labelledby=save-modal-label aria-hidden=true>
+  <div class=modal-dialog>
+    <div class=modal-content>
+      <div class=modal-header>
+        <button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button>
+        <h4 class=modal-title id=save-modal-label>Save Your Sunset</h4>
+      </div>
+      <div class="modal-body text-center">
+        <div class=img></div>
+      </div>
+      <div class=modal-footer>
+        <button type=button class="btn btn-default" data-dismiss=modal>Close</button>
+        <button type=button class="btn btn-primary save-button">Save</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
