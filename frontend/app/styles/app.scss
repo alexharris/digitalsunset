@@ -79,6 +79,7 @@ body.app {
 	display: inline-block;
     height: 20px;
     width: 40px;
+    padding-bottom: 20px;
     background: transparent url('/images/up-down.png') 50% 50% no-repeat;
     position: absolute;
     left: 0px;
@@ -90,7 +91,7 @@ body.app {
 	width: 20px;
 	height: 20px;
 	border-radius: 0 10px 10px 10px;
-    left: 255px;
+    left: 265px;
 }
 
 .modal-swatch {

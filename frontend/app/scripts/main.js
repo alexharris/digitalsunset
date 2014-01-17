@@ -119,6 +119,8 @@ function updateColorStopArray() {
 	$('.ui-slider-handle').each(function(){
 		var offset = $(this).position();
 		var offsetTop = offset.top;
+		offsetTop = offsetTop + $(this).height();
+
 		//sometimes the handle slides too far and this value gets negative. clean it up.
 		if (offsetTop < 0) {
 			offsetTop = 0;
@@ -185,7 +187,7 @@ function saveCanvas(){
 	$('.save-button').click(function(){
 		var canvas = document.getElementById('gradient');
 		var img = canvas.toDataURL('image/png');
-		$('.modal-save .modal-body .img').replaceWith('<div class="img"></div><img src="'+img+'"/></div>');
+		$('.modal-save .modal-body .img').replaceWith('<img class="img" src="'+img+'"/></div>');
 		$('.modal-save').modal();
 
 		//save to form
