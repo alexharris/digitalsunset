@@ -191,8 +191,8 @@ function saveCanvas(){
 		$('.modal-save').modal();
 
 		//save to form
-		// gradientForm = document.getElementById('form-gradient');
-		// gradientForm.value = img;
+		var gradientForm = $('#form-gradient')[0];
+		gradientForm.value = img;
 	});
 }
 

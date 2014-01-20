@@ -249,7 +249,7 @@ module.exports = function (grunt) {
                 options: {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: false,
-                    removeAttributeQuotes: true,
+                    removeAttributeQuotes: false,
                     removeCommentsFromCDATA: true,
                     removeEmptyAttributes: true,
                     removeOptionalTags: true,
@@ -305,7 +305,17 @@ module.exports = function (grunt) {
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*'
+                        'bower_components/sass-bootstrap/fonts/*.*',
+                        'bower_components/jquery-minicolors/*.png'
+                    ]
+                },
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/bower_components/jquery-minicolors/',
+                    dest: '<%= yeoman.dist %>/styles/',
+                    src: [
+                        '*.png'
                     ]
                 }]
             },

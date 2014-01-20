@@ -1,1 +1,268 @@
-"use strict";function testSomeShit(){console.log("Gradient Size: "+gradientSize),console.log("Handle Array: "+handleArray),console.log("Colors: "+colors),console.log("Current colorstop values: "+currentColorStopValues)}function hex(a){return("0"+parseInt(a).toString(16)).slice(-2)}function addHandle(){$(".add-new").click(function(){createColorStopHandle(gradientSize),colors.push("000000"),addSliderSwatch(),colorHandles()})}function addSliderSwatch(){$(".ui-slider-handle").each(function(){0===$(this).children().length&&$(this).append('<div class="ui-slider-swatch"></div>')}),addNewColor()}function createColorStopHandle(a){var b=a;handleArray.push(b),initSlider()}function updateAfterArrayChanges(){currentColorStopValues=[],updateColorStopArray(),createGradient(colors)}function initSlider(){$(".slider").slider({orientation:"vertical",range:[0,gradientSize],values:handleArray,stop:function(){updateAfterArrayChanges()}})}function addNewColor(){$(".ui-slider-swatch").click(function(){$(".ui-slider-swatch").removeClass("current-swatch"),$(".modal-picker").modal(),$(this).addClass("current-swatch");var a=$(this).css("background-color");$(".ui-slider-handle").length<=2?$(".remove-color").hide():$(".remove-color").show(),callPicker(a)})}function removeColor(){$(".remove-color").click(function(){$(".ui-slider-handle").each(function(a){1===$(this).children(".current-swatch").length&&(handleArray.splice(a,1),colors.splice(a,1),$(this).remove())}),initSlider(),updateAfterArrayChanges()})}function updateColorStopArray(){$(".ui-slider-handle").each(function(){var a=$(this).position(),b=a.top;b+=$(this).height(),0>b&&(b=0),currentColorStopValues.push(b)})}function callPicker(a){var b=$(".modal-swatch");$(".minicolors-input").minicolors({theme:"digitalSunset",defaultValue:"",inline:!0,change:function(a){b.css("background-color",a)}}),$(".minicolors-input").minicolors("value",[a])}function modalColorOk(){$(".modal-color-ok").click(function(){var a=$(".modal-swatch").css("background-color");$(".ui-slider-swatch.current-swatch").css("background-color",a),$(".ui-slider-swatch.current-swatch").removeClass("current-swatch"),updateColorArray()})}function updateColorArray(){colors=[];$(".ui-slider-swatch").each(function(){var a=$(this).css("backgroundColor");colors.push(a)}),createGradient(colors)}function createGradient(a){var b=document.getElementById("gradient"),c=b.getContext("2d"),d=c.createLinearGradient(0,0,0,gradientSize);if(!(a.length<=1)){{var e;a.length-1}for(e=0;e<a.length;++e)d.addColorStop(currentColorStopValues[e]/gradientSize,a[e]);c.fillStyle=d,c.fillRect(0,0,gradientSize,gradientSize)}}function saveCanvas(){$(".save-button").click(function(){var a=document.getElementById("gradient"),b=a.toDataURL("image/png");$(".modal-save .modal-body .img").replaceWith('<img class="img" src="'+b+'"/></div>'),$(".modal-save").modal()})}function startGradient(){$(".start-gradient").click(function(){$(this).hide(),$(".sunset-maker").show()})}function questionBox(){$(".question").click(function(){$(".question-box").slideToggle()}),$(".question-box-close").click(function(){$(".question-box").slideToggle()})}function intialHandleLoad(){createColorStopHandle(0),createColorStopHandle(gradientSize)}function colorHandles(){$(".ui-slider-swatch").each(function(a){$(this).css("background","#"+colors[a])})}var gradientSize=200,handleArray=[],colors=["fbb85d","ed257b"],currentColorStopValues=[gradientSize,0],bg;$.cssHooks.backgroundColor={get:function(a){return a.currentStyle?bg=a.currentStyle.backgroundColor:window.getComputedStyle&&(bg=document.defaultView.getComputedStyle(a,null).getPropertyValue("background-color")),-1===bg.search("rgb")?bg:(bg=bg.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/),"#"+hex(bg[1])+hex(bg[2])+hex(bg[3]))}},$(document).ready(function(){addHandle(),createGradient(colors),intialHandleLoad(),addSliderSwatch(),addNewColor(),colorHandles(),modalColorOk(),saveCanvas(),removeColor(),startGradient(),questionBox()});
+'use strict';
+/*jshint undef:false */
+/*jshint unused:false */
+/*jshint latedef:false */
+
+var gradientSize = 200; //size of gradient square
+var handleArray = []; //array of handles for slider
+var colors = ['fbb85d','ed257b']; //create array for building gradient
+var currentColorStopValues = [gradientSize, 0]; //initial values for handle position
+
+function testSomeShit(){
+	console.log('Gradient Size: ' + gradientSize);
+	console.log('Handle Array: ' + handleArray);
+	console.log('Colors: ' + colors);
+	console.log('Current colorstop values: ' + currentColorStopValues);
+}
+
+
+// convert RGB to hex
+var bg;
+$.cssHooks.backgroundColor = {
+	get: function(elem) {
+		if (elem.currentStyle) {
+			bg = elem.currentStyle.backgroundColor;
+		} else if (window.getComputedStyle) {
+			bg = document.defaultView.getComputedStyle(elem,null).getPropertyValue('background-color');
+		}
+		if (bg.search('rgb') === -1) {
+			return bg;
+		} else {
+			bg = bg.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+			return '#' + hex(bg[1]) + hex(bg[2]) + hex(bg[3]);
+		}
+	}
+};
+
+function hex(x) {
+	return ('0' + parseInt(x).toString(16)).slice(-2);
+}
+
+//add new handle to slider
+function addHandle(){
+	$('.add-new').click(function(){
+		createColorStopHandle(gradientSize);
+		colors.push('000000');
+		addSliderSwatch();
+		colorHandles();
+	});
+}
+
+function addSliderSwatch(){
+	$('.ui-slider-handle').each(function(i, val){
+		if($(this).children().length === 0){
+			$(this).append('<div class="ui-slider-swatch"></div>');
+		}
+	});
+	addNewColor();
+}
+
+//create new handle object
+function createColorStopHandle(handlePosition){
+	var newHandle = handlePosition;
+	handleArray.push(newHandle);
+	initSlider(); //reinit to include new handle
+}
+
+function updateAfterArrayChanges(){
+	currentColorStopValues = [];
+	updateColorStopArray();
+	createGradient(colors);
+}
+
+//load slider with current handles
+function initSlider(){
+	$('.slider').slider({
+		orientation: 'vertical',
+		range: [0, gradientSize],
+		values: handleArray,
+		stop: function( event, ui ) {
+			updateAfterArrayChanges();
+	    }
+	});
+}
+
+function addNewColor(){
+	$('.ui-slider-swatch').click(function(){
+		$('.ui-slider-swatch').removeClass('current-swatch');
+		$('.modal-picker').modal();
+		$(this).addClass('current-swatch');
+		var currentSwatchColor = $(this).css('background-color');
+		
+		if($('.ui-slider-handle').length <= 2) {
+			$('.remove-color').hide();
+		} else {
+			$('.remove-color').show();
+		}
+
+		callPicker(currentSwatchColor);
+	});
+}
+
+function removeColor(){
+	$('.remove-color').click(function(){
+		$('.ui-slider-handle').each(function(i, val){
+			if($(this).children('.current-swatch').length === 1){
+				handleArray.splice(i,1);
+				colors.splice(i,1);
+				$(this).remove();
+			}
+		});
+		initSlider();
+		updateAfterArrayChanges();
+	});
+	
+}
+
+function updateColorStopArray() {
+	$('.ui-slider-handle').each(function(){
+		var offset = $(this).position();
+		var offsetTop = offset.top;
+		offsetTop = offsetTop + $(this).height();
+
+		//sometimes the handle slides too far and this value gets negative. clean it up.
+		if (offsetTop < 0) {
+			offsetTop = 0;
+		}
+		currentColorStopValues.push(offsetTop);
+	});
+}
+
+// calls minicolors inside modal
+function callPicker(currentSwatchColor){
+
+	var modalSwatch = $('.modal-swatch');
+
+	$('.minicolors-input').minicolors({
+		theme: 'digitalSunset',
+		defaultValue: '',
+		inline: true,
+		change: function(hex, opacity) {
+			modalSwatch.css('background-color', hex);
+		}
+	});
+	//set the picker value to match current slider swatch
+	$('.minicolors-input').minicolors('value',[currentSwatchColor]);
+}
+
+function modalColorOk(){
+	$('.modal-color-ok').click(function(){
+		var swatchColor = $('.modal-swatch').css('background-color');
+		$('.ui-slider-swatch.current-swatch').css('background-color', swatchColor);
+		$('.ui-slider-swatch.current-swatch').removeClass('current-swatch');
+		updateColorArray();
+	});
+}
+
+// build array of colors from swatch backgrounds
+function updateColorArray(){
+	colors = [];
+	var cssBackgroundColor;
+	$('.ui-slider-swatch').each(function(i, val){
+		var cssBackgroundColor = $(this).css('backgroundColor');
+		colors.push(cssBackgroundColor);
+	});
+	createGradient(colors);
+}
+
+function createGradient(colors){
+	var gradient = document.getElementById('gradient');
+	var gradContext = gradient.getContext('2d');
+	var myGradient = gradContext.createLinearGradient(0, 0, 0, gradientSize);
+	if(colors.length <= 1){
+		return;
+	} else {
+		var modifiedColorLength = colors.length - 1;
+	}
+	var i;
+	for (i = 0; i < colors.length; ++i) {
+		myGradient.addColorStop((currentColorStopValues[i] / gradientSize), colors[i]);
+	}
+	gradContext.fillStyle = myGradient;
+	gradContext.fillRect(0, 0, gradientSize, gradientSize);
+}
+
+function saveCanvas(){
+	$('.save-button').click(function(){
+		var canvas = document.getElementById('gradient');
+		var img = canvas.toDataURL('image/png');
+		$('.modal-save .modal-body .img').replaceWith('<img class="img" src="'+img+'"/></div>');
+		$('.modal-save').modal();
+
+		//save to form
+		var gradientForm = $('#form-gradient')[0];
+		gradientForm.value = img;
+	});
+}
+
+// function submitCanvas(){
+// 	$('.submit-button').click(function(){
+
+// 	}
+// }
+
+function startGradient(){
+	$('.start-gradient').click(function(){
+		$(this).hide();
+		$('.sunset-maker').show();
+	});
+}
+
+function questionBox(){
+	$('.question').click(function(){
+		$('.question-box').slideToggle();
+	});
+	$('.question-box-close').click(function(){
+		$('.question-box').slideToggle();
+	});
+}
+
+
+function intialHandleLoad(){
+	// create initial handles
+	createColorStopHandle(0);
+	createColorStopHandle(gradientSize);
+}
+
+function colorHandles(){
+	//color them from color array
+	$('.ui-slider-swatch').each(function(i, val){
+		$(this).css('background', '#' + colors[i]);
+	});
+}
+
+
+//Load methods on document ready
+$(document).ready(function(){
+
+	// click to add new handle
+	addHandle();
+	
+	//load initial gradient
+	createGradient(colors);
+
+	//load and color intial handles
+	intialHandleLoad();
+
+	// add swatches
+	addSliderSwatch();
+
+	addNewColor();
+
+	// color swatches
+	colorHandles();
+
+	modalColorOk();
+
+	// print canvas to jpg
+	saveCanvas();
+
+	removeColor();
+
+	//unhide gradient maker
+	startGradient();
+
+	questionBox();
+
+});

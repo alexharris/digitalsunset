@@ -11,9 +11,14 @@ get '/' do
   erb :"main/index"
 end
 
-get '/gradients/create' do
+get '/app' do
   @gradient = Gradient.new
-  erb :"gradients/create"
+  erb :"mobile/index", :layout => :mobile
+end
+
+get '/gallery' do
+  @gradients = Gradient.order("created_at DESC")
+  erb :"gallery/index"
 end
 
 post '/gradients' do

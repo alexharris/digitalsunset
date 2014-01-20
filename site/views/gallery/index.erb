@@ -1,0 +1,14 @@
+<div class="row white-row gallery">
+    <% @gradients.each do |gradient| %>
+        <div class="col-md-4 center">
+            <img src="<%= gradient.gradient %>" /><br />
+            <div class="location">
+                <%= gradient.author %><br />
+                <%= gradient.note %>
+            </div>
+        </div>
+    <% end %>
+</div>
+<div class="row center">
+
+</div>
