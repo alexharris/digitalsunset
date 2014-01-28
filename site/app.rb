@@ -21,6 +21,10 @@ get '/gallery' do
   erb :"gallery/index"
 end
 
+get '/info' do
+  erb :"info/index"
+end
+
 post '/gradients' do
   @gradient = Gradient.new(params[:gradient])
   if @gradient.save

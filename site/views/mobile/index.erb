@@ -1,55 +1,74 @@
 <div class="row center">
-    <div class=col-md-12>
-        <div class=start-gradient>
-            
-            <img class=app-start-gradient src=images/app-start-gradient.png><br>
-            <div class=make-a-sunset>Make a sunset.</div>
+    <div class="col-md-12">
+        <div class="start-gradient">
+            <img class="app-start-gradient" src="images/app-start-gradient.png"><br>
+            <div class="make-a-sunset">Make a sunset.</div>
         </div>
-        <div class=sunset-maker>
-            <div class="add-new interior-button"><span class=icon-plus></span> new color</div>
-            <div class=slider> </div>
-            <canvas id=gradient width=200 height=200></canvas><br>
-            <div class="interior-button btn save-button"><span class=icon-checkmark></span> save sunset</div>
+        <div class="sunset-maker">
+            <div class="add-new interior-button"><span class="icon-plus"></span> new color</div>
+            <div class="slider"> </div>
+            <canvas id="gradient" width="200" height="200"></canvas><br>
+            <div class="interior-button btn save-button"><span class="icon-checkmark"></span> save sunset</div>
         </div>
     </div>
 </div>
+<!-- INFO Modal -->
+<div class="modal fade modal-info" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Welcome.
+
+            </div> 
+            <div class="modal-body">
+                Use the color drops on the right to pick your colors, use the handles on the left to drag colors around. 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modal-color-ok" data-dismiss="modal">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <!-- COLOR Modal -->
-<div class="modal fade modal-picker" tabindex=-1 role=dialog aria-labelledby=save-modal-label aria-hidden=true>
-  <div class=modal-dialog>
-    <div class=modal-content>
-      <div class=modal-body>
-            <input type=hidden id=hidden-input class=minicolors-input value=#000000>
-            <div class=modal-swatch></div>
-      </div>
-      <div class=modal-footer>
-        <button type=button class="btn btn-danger remove-color pull-left" data-dismiss=modal>Remove Color</button>
-        <button type=button class="btn btn-default modal-color-ok" data-dismiss=modal>OK</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+<div class="modal fade modal-picker" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <input type="hidden" id="hidden-input" class="minicolors-input" value="#000000">
+                <div class="modal-swatch"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger remove-color pull-left" data-dismiss="modal">Remove Color</button>
+                <button type="button" class="btn btn-default modal-color-ok" data-dismiss="modal">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- SAVE Modal -->
-<div class="modal fade modal-save" id=save-modal tabindex=-1 role=dialog aria-labelledby=save-modal-label aria-hidden=true>
-    <div class=modal-dialog>
-        <div class=modal-content>
-            <!--<div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="save-modal-label">Save Your Sunset</h4>
-            </div> -->
-            <form action=/gradients method=post role=form class=create-form>
+<div class="modal fade modal-save" id="save-modal" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Hold down image to save to phone, or submit it to our gallery.
+
+            </div> 
+            <form action="/gradients" method="post" role="form" class="create-form">
                 <div class="modal-body text-center">
-                    <div class=img></div>
-                    <div class=form-group>
-                        <input id=form-gradient type=hidden name=gradient[gradient] class=form-control>
+                    
+                    <div class="form-group">
+                        <input id="form-gradient" type="hidden" name="gradient[gradient]" class="form-control">
                         <br>
-                        <input id=author placeholder=Author name=gradient[author] maxlength=100>
-                        <hr>
-                        <input id=location placeholder=Location name=gradient[note] maxlength=100>
+
+                        <input id="author" placeholder="Author" name="gradient[author]" maxlength="100">
+                        <br>
+                        <br>
+                        <input id="location" placeholder="Location" name="gradient[note]" maxlength="100">
                     </div>
+                    <div class="img"></div>
                 </div>
-                <div class=modal-footer>
-                    <button type=button data-dismiss=modal aria-hidden=true class="btn btn-danger pull-left">Cancel</button>
-                    <button type=submit class="btn btn-primary submit-button">Submit</button>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-danger pull-left">Cancel</button>
+                    <button type="submit" class="btn btn-primary submit-button">Submit</button>
                 </div>
             </form>
         </div><!-- /.modal-content -->

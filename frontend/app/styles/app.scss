@@ -25,14 +25,16 @@ body.app {
 		padding: 20px 20px;
 	}
 	.container {
+		width: 100%;
+		max-width: 100%;
 		margin: 0px;
-		padding: 0px;
+		padding: 0px 0px 50px 0;
 		.sunset-maker {
 			display: none;
 			margin: 0 auto;
 			.slider {
 			    height: 200px;
-			    width: 90%;
+			    width: 100%;
 			    margin: 0 auto;
 			    float: left;
 			    position: absolute;
@@ -43,7 +45,7 @@ body.app {
 	.bottom-nav {
 		height: 60px;
 		background-color: #929292;
-		position: absolute;
+		position: fixed;
 		bottom: 0px;
 		width: 100%;
 	}
@@ -58,7 +60,7 @@ body.app {
 }
 
 .app-start-gradient {
-	padding: 68px 0 20px 0;
+	padding: 48px 0 20px 0;
 }
 
 .make-a-sunset {
@@ -78,11 +80,11 @@ body.app {
 .ui-slider-handle {
 	display: inline-block;
     height: 20px;
-    width: 40px;
+    width: 15%;
     padding-bottom: 20px;
-    background: transparent url('/images/up-down.png') 50% 50% no-repeat;
+    background: transparent url('/images/up-down.png') 0% 50% no-repeat;
     position: absolute;
-    left: 0px;
+    left: 3%;
 }
 
 .ui-slider-swatch {
@@ -91,12 +93,20 @@ body.app {
 	width: 20px;
 	height: 20px;
 	border-radius: 0 10px 10px 10px;
-    left: 265px;
+    left: 550%;
 }
 
 .modal-swatch {
 	height: 40px;
 	width: 100%;
+}
+
+.modal {
+	font-size: .8em;
+}
+
+.modal p {
+	margin-bottom: 10px;
 }
 
 //  QUESTION BOX

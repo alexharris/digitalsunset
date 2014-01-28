@@ -42,7 +42,7 @@ function hex(x) {
 //add new handle to slider
 function addHandle(){
 	$('.add-new').click(function(){
-		createColorStopHandle(gradientSize);
+		createColorStopHandle(gradientSize/2);
 		colors.push('000000');
 		addSliderSwatch();
 		colorHandles();
@@ -77,6 +77,9 @@ function initSlider(){
 		orientation: 'vertical',
 		range: [0, gradientSize],
 		values: handleArray,
+		start: function( event, ui) {
+			appTooltips('hide-handle');
+		},
 		stop: function( event, ui ) {
 			updateAfterArrayChanges();
 	    }
@@ -95,8 +98,9 @@ function addNewColor(){
 		} else {
 			$('.remove-color').show();
 		}
-
 		callPicker(currentSwatchColor);
+
+		appTooltips('hide-swatch');
 	});
 }
 
@@ -168,19 +172,21 @@ function updateColorArray(){
 
 function createGradient(colors){
 	var gradient = document.getElementById('gradient');
-	var gradContext = gradient.getContext('2d');
-	var myGradient = gradContext.createLinearGradient(0, 0, 0, gradientSize);
-	if(colors.length <= 1){
-		return;
-	} else {
-		var modifiedColorLength = colors.length - 1;
+	if(gradient){
+		var gradContext = gradient.getContext('2d');
+		var myGradient = gradContext.createLinearGradient(0, 0, 0, gradientSize);
+		if(colors.length <= 1){
+			return;
+		} else {
+			var modifiedColorLength = colors.length - 1;
+		}
+		var i;
+		for (i = 0; i < colors.length; ++i) {
+			myGradient.addColorStop((currentColorStopValues[i] / gradientSize), colors[i]);
+		}
+		gradContext.fillStyle = myGradient;
+		gradContext.fillRect(0, 0, gradientSize, gradientSize);
 	}
-	var i;
-	for (i = 0; i < colors.length; ++i) {
-		myGradient.addColorStop((currentColorStopValues[i] / gradientSize), colors[i]);
-	}
-	gradContext.fillStyle = myGradient;
-	gradContext.fillRect(0, 0, gradientSize, gradientSize);
 }
 
 function saveCanvas(){
@@ -200,6 +206,7 @@ function startGradient(){
 	$('.start-gradient').click(function(){
 		$(this).hide();
 		$('.sunset-maker').show();
+		appTooltips('show');
 	});
 }
 
@@ -223,6 +230,111 @@ function colorHandles(){
 	//color them from color array
 	$('.ui-slider-swatch').each(function(i, val){
 		$(this).css('background', '#' + colors[i]);
+	});
+}
+
+// POPOVER QUESTION SHTUFF
+var mainQuestionArray = [
+	'a longer string here to see what a longer string looks like in the actual app',
+	'who knows what kinda shit nicole is gonna write we will have to wait to find out',
+	'third q'
+];
+
+var $desktopQuestionPopover = $('.desktop-question');
+var question;
+
+function randomQuestion(){
+	return mainQuestionArray[Math.floor(Math.random()*mainQuestionArray.length)];
+}
+
+function initDesktopQuestionPopover(question){
+	$('.desktop-question').popover({
+		placement: 'bottom auto',
+		container: 'body',
+		trigger: 'manual',
+		content: question
+	});
+}
+
+function desktopQuestionPopover(){
+	$desktopQuestionPopover.on('click', function(e) {
+		if($('.popover').is(':visible')){
+			console.log('hello');
+		} else {
+			e.stopPropagation();
+
+			initDesktopQuestionPopover(randomQuestion());
+
+			$desktopQuestionPopover.popover('show');
+
+			$(document).one('click.initializedPopover', function() {
+				$desktopQuestionPopover.popover('hide');
+			});
+
+			$desktopQuestionPopover.one('hidden.bs.popover', function() {
+				$desktopQuestionPopover.popover('destroy');
+				initDesktopQuestionPopover(randomQuestion());
+			});
+		}
+	});
+}
+
+function infoModal(){
+	$('.modal-info').modal();
+	$('.info-button').click(function(){
+		$('.modal-info').modal();
+	});
+}
+
+function appTooltips(state){
+	$('.ui-slider-handle:last-of-type').tooltip({
+		html: 'wtooltip',
+		placement: 'bottom',
+		title: 'Drag these handles to move colors',
+		trigger: 'manual'
+	});
+	$('.ui-slider-swatch:first-of-type').tooltip({
+		html: 'wtooltip',
+		placement: 'left',
+		title: 'Use these colordrops to pick colors',
+		trigger: 'manual'
+	});
+
+	switch(state){
+		case 'show':
+			$('.ui-slider-handle:last-of-type').tooltip('show');
+			$('.ui-slider-handle:first-of-type .ui-slider-swatch').tooltip('show');
+			break;
+		case 'hide-handle':
+			$('.ui-slider-handle').tooltip('hide');
+			break;
+		case 'hide-swatch':
+			$('.ui-slider-handle .ui-slider-swatch').tooltip('hide');
+			break;
+		default:
+			console.log('default');
+			break;
+	}
+
+}
+
+var scrollTop, elementOffset, distance;
+
+function back2Top(){
+	$(document).scroll(function(){
+		scrollTop     = $(window).scrollTop();
+        elementOffset = $('.container').offset().top;
+        distance      = (elementOffset - scrollTop);
+
+        if(distance < -300){
+			$('.back-to-top').fadeIn();
+        } else {
+			$('.back-to-top').fadeOut('fast');
+        }
+	});
+
+	$('.back-to-top').click(function(){
+		$(window).scrollTop(0);
 	});
 }
 
@@ -257,6 +369,16 @@ $(document).ready(function(){
 	//unhide gradient maker
 	startGradient();
 
-	questionBox();
+	// randomNumber();
+
+	desktopQuestionPopover();
+
+	// questionBox();
+
+	// infoModal();
+
+	back2Top();
+	
+	
 
 });

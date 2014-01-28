@@ -33,6 +33,9 @@ body {
 
 p {
     margin: 0 0 $itemSpacing 0;
+    &:first-of-type {
+        margin-top: 30px;
+    }
 }
 
 a:hover, a:focus {
@@ -55,58 +58,36 @@ a:hover, a:focus {
     padding-bottom: 19px;
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
-}
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
-}
 
 // DIGITAL 
+
+.back-to-top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: $yellow;
+    display: none;
+    z-index: 200;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 5px;
+    &:hover {
+        cursor: hover;
+        color: $neonPink;
+    }
+}
 
 .header {
     padding-top: 20px;
     text-align: center;
+}
+
+.popover {
+    font-size: .8em;
 }
 
 .logo {
@@ -139,10 +120,13 @@ a:hover, a:focus {
             @extend .full-size-icon;
             &:hover {
                 background-color: transparent;
-                color: $white;
             }
         }
     }
+}
+
+.container {
+    max-width: 730px;
 }
 
 .row {
@@ -203,7 +187,7 @@ a:hover, a:focus {
 .white-row {
     position: relative;
     background-color: $white;
-    display: inline-block;
+    // display: inline-block;
 }
 
 .footer {
@@ -211,6 +195,13 @@ a:hover, a:focus {
 }
 
 //  GALLERY
+
+.gallery {
+    background: none;
+    .white-row {
+        margin: 0 auto;
+    }
+}
 
 .gallery img {
     padding: 20px 0 10px 0;
@@ -222,5 +213,30 @@ a:hover, a:focus {
     color: $grey;
     text-align: left;
     margin-bottom: 10px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 10px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+
+    .nav > li a:hover {
+        color: #FFF;
+    }
 }
 

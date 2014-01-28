@@ -1,6 +1,9 @@
+<div class="row center">
+    <p>Some stuff here</p>
+</div>
 <div class="row white-row gallery">
     <% @gradients.each do |gradient| %>
-        <div class="col-md-4 center">
+        <div class="col-sm-4">
             <img src="<%= gradient.gradient %>" /><br />
             <div class="location">
                 <%= gradient.author %><br />
@@ -8,6 +11,7 @@
             </div>
         </div>
     <% end %>
+    <div class="clearfix"></div>
 </div>
 <div class="row center">
 

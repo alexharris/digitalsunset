@@ -2,72 +2,77 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class=no-js> <!--<![endif]-->
-<head>
-    <meta charset=utf-8>
-    <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <title>digitalsunset</title>
-    <meta name=description content="">
-    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel=stylesheet href=styles/vendor.css>
-    <link rel=stylesheet href=styles/main.css>
-    <script src=bower_components/modernizr/modernizr.js></script>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>digitalsunset</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/vendor.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="bower_components/modernizr/modernizr.js"></script>
+
+    
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
 
-<body>
-    <!--[if lt IE 10]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+        <div class="container">
+            <div class="header">
+                <ul class="nav">
+                    <li><a href="/" class="icon-smiley center-icon"></a></li>
+                    <li><a href="#" class="icon-question center-icon desktop-question"></a></li>
+                    <li><a href="/info" class="icon-info center-icon"></a></li>
+                    <li><a href="/gallery" class="icon-images center-icon"></a></li>
+                </ul>
+                <div class="logo"><img src="images/digital-sunset-logo.png"></div>
+                <div class="tag-line"><strong><em>*Catch a sunset, put it in your pocket*</em></strong></div>
+            </div>
 
+             <%= yield %>
+             
+            <div class="footer row black-row">
+                <section class="full-width-row">
+                    <div class="col-lg-6 center">
+                        <div class="icon-smiley full-size-icon"></div>
+                    </div>
+                    <div class="col-lg-6 center"></div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-6 center">
+                        <p>Digital Sunset is an app project by Alex Harris and Nicole Lavelle. It is simultaneously very important and totally useless.</p>
+                        <p>They are excited to see what you do with it. Tag your things with the hashtag #digitalsunsetapp so we can peep your gradients.</p>
+                    </div>
+                    <div class="col-lg-6 center">
+                        <p>Some other info.</p>
+                        <p>digitalsunsetapp.com<br>
+                            #digitalsunsetapp</p>
+                        <p>© 2013 or whatever</p>
+                        <p>digitalsunset was made with heroku thing</p>
+                        <p>Also digitalsunsetapp.github.io</p>
+                    </div>
+                </section>
+            </div>
 
-    <div class=container>
-        <div class=header>
-            <ul class=nav>
-                <li class=active><a href=/gradients.html class="icon-smiley center-icon"></a></li>
-                <li><a href=# class="icon-question center-icon"></a></li>
-                <li><a href=# class="icon-info center-icon"></a></li>
-            </ul>
-            <div class=logo><img src=images/digital-sunset-logo.png></div>
-            <div class=tag-line><strong><em>*Catch a sunset, put it in your pocket*</em></strong></div>
-            
         </div>
-        <%= yield %>
-        <div class="footer row black-row">
-            <section class=full-width-row>
-                <div class="col-lg-6 center">
-                    <div class="icon-smiley full-size-icon"></div>
-                    <p>Digital Sunset is an app project by Alex Harris and Nicole Lavelle. It is simultaneously very important and totally useless.</p>
-                    <p>They are excited to see what you do with it. Tag your things with the hashtag #digitalsunsetapp so we can peep your gradients.</p>
-                </div>
-                <div class="col-lg-6 center">
-                    <p>Some other info.</p>
-                    <p>digitalsunsetapp.com<br>
-                        #digitalsunsetapp</p>
-                    <p>© 2013 or whatever</p>
-                    <p>digitalsunset was made with heroku thing</p>
-                    <p>Also digitalsunsetapp.github.io</p>
-                </div>
-            </section>
-        </div>
-
-    </div>
 
 
-    <script src=scripts/vendor.js></script>
+        <script src="scripts/vendor.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
 
-    <script src=scripts/main.js></script>
+        <script src="scripts/main.js"></script>
 
-    <script src=scripts/plugins.js></script>
+        <script src="scripts/plugins.js"></script>
 
-</body>

@@ -44,6 +44,23 @@
                     </div>
                 </div>
             </div>
+            <!-- INFO Modal -->
+            <div class="modal fade modal-info" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            Welcome.
+
+                        </div> 
+                        <div class="modal-body">
+                            Use the color drops on the right to pick your colors, use the handles on the left to drag colors around. 
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default modal-color-ok" data-dismiss="modal">OK</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
             <!-- COLOR Modal -->
             <div class="modal fade modal-picker" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
                 <div class="modal-dialog">
@@ -63,20 +80,23 @@
             <div class="modal fade modal-save" id="save-modal" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <!--<div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title" id="save-modal-label">Save Your Sunset</h4>
-                        </div> -->
+                        <div class="modal-header">
+                            Hold down image to save to phone, or submit it to our gallery.
+
+                        </div> 
                         <form action="/gradients" method="post" role="form" class="create-form">
                             <div class="modal-body text-center">
-                                <div class="img"></div>
+                                
                                 <div class="form-group">
                                     <input id="form-gradient" type="hidden" name="gradient[gradient]" class="form-control" value="" />
                                     <br />
+
                                     <input id="author" placeholder="Author" name="gradient[author]" maxlength="100" />
-                                    <hr />
+                                    <br />
+                                    <br />
                                     <input id="location" placeholder="Location" name="gradient[note]" maxlength="100" />
                                 </div>
+                                <div class="img"></div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" data-dismiss="modal" aria-hidden="true" class="btn btn-danger pull-left">Cancel</button>
@@ -92,9 +112,11 @@
             </div>
             <div class="bottom-nav center">
                 <ul class="nav">
-                    <li class="active"><a href="/gradients.html" class="icon-smiley center-icon"></a></li>
-                    <li><a href="#" class="question icon-question center-icon"></a></li>
-                    <li><a href="#" class="icon-info center-icon"></a></li>
+                    <li><a href="#" class="desktop-question icon-question center-icon"></a></li>
+                    <li><a href="#" class="icon-info center-icon info-button"></a></li>
+                    <li><a href="#" class="icon-smiley center-icon"></a></li>
+                    <li><a href="/gallery.html" class="icon-images center-icon"></a></li>
+                    
                 </ul>
             </div>
         </div>

@@ -2,42 +2,38 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class=no-js> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset=utf-8>
-        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>digitalsunset</title>
-        <meta name=description content="">
-        <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel=stylesheet href=styles/vendor.css>
-        <link rel=stylesheet href=styles/main.css>
-        <script src=bower_components/modernizr/modernizr.js></script>
+        <link rel="stylesheet" href="styles/vendor.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="bower_components/modernizr/modernizr.js"></script>
     
-    <body class=app>
+    <body class="app">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class=container>
-            <div class=header>
-                <div class=app-logo><img src=images/app-logo.png></div>
+        <div class="container">
+            <div class="header">
+                <div class="app-logo"><img src="images/app-logo.png"></div>
             </div>
             <%= yield %>
-            <div class=question-box>
-                <div class=question-box-close>X</div>
-                Some kinda of text here but not too much whateva
-            </div>
             <div class="bottom-nav center">
-                <ul class=nav>
-                    <li class=active><a href=/gradients.html class="icon-smiley center-icon"></a></li>
-                    <li><a href=# class="question icon-question center-icon"></a></li>
-                    <li><a href=# class="icon-info center-icon"></a></li>
+                <ul class="nav">
+                    <li><a href="#" class="desktop-question icon-question center-icon"></a></li>
+                    <li><a href="#" class="icon-info center-icon info-button"></a></li>
+                    <li><a href="#" class="icon-smiley center-icon"></a></li>
+                    <li><a href="/gallery" class="icon-images center-icon"></a></li>
                 </ul>
             </div>
         </div>
-
-        <script src=scripts/vendor.js></script>
+        <script src="scripts/vendor.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -49,7 +45,7 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <script src=scripts/main.js></script>
+        <script src="scripts/main.js"></script>
 
-        <script src=scripts/plugins.js></script>
+        <script src="scripts/plugins.js"></script>
 
