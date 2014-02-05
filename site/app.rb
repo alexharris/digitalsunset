@@ -16,6 +16,11 @@ get '/app' do
   erb :"mobile/index", :layout => :mobile
 end
 
+get '/gallery', :user_agent => /iPhone/ do
+  @gradients = Gradient.order("created_at DESC")
+  erb :"gallery/index", :layout => :mobile
+end
+
 get '/gallery' do
   @gradients = Gradient.order("created_at DESC")
   erb :"gallery/index"

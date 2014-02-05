@@ -46,21 +46,22 @@ function addHandle(){
 		colors.push('000000');
 		addSliderSwatch();
 		colorHandles();
+		updateAfterArrayChanges();
 	});
 }
 
 function addSliderSwatch(){
 	$('.ui-slider-handle').each(function(i, val){
 		if($(this).children().length === 0){
-			$(this).append('<div class="ui-slider-swatch"></div>');
+			$(this).append('<div class="inner-handle icon-double-arrow"></div><div class="ui-slider-swatch"></div>');
 		}
 	});
 	addNewColor();
 }
 
-//create new handle object
+//create new handle
 function createColorStopHandle(handlePosition){
-	var newHandle = handlePosition;
+	var newHandle = handlePosition/2;
 	handleArray.push(newHandle);
 	initSlider(); //reinit to include new handle
 }
@@ -235,9 +236,21 @@ function colorHandles(){
 
 // POPOVER QUESTION SHTUFF
 var mainQuestionArray = [
-	'a longer string here to see what a longer string looks like in the actual app',
-	'who knows what kinda shit nicole is gonna write we will have to wait to find out',
-	'third q'
+	'Gradient appreciation or gradientappropriation?',
+	'What is worth looking at? What is worth looking at on the internet?',
+	'Can you hold the magic of the sky in a tiny computer?',
+	'If a sunset is fleeting, what is a png?',
+	'Pollution or atmosphere?',
+	'How long can you look at the sunset?',
+	'If photographs are experience captured, then what is a picture of the sunset on your Instagram?',
+	'Something exists, it must. The crimson-gold, the violet-fuchsia, it is real.',
+	'Is this a souvenir or a note? A reflection or a snapshot?',
+	'Gotta catch \'em all.',
+	'Is this a photograph?',
+	'Is it worth looking at your phone instead of the sunset?',
+	'How chronic is your voyeurism?',
+	'If a photograph freezes a moment, what does a digital gradient do?',
+	'If you look at the sunset, will it hurt your corneas? Will it hurt your psyche?'
 ];
 
 var $desktopQuestionPopover = $('.desktop-question');
@@ -249,9 +262,9 @@ function randomQuestion(){
 
 function initDesktopQuestionPopover(question){
 	$('.desktop-question').popover({
-		placement: 'bottom auto',
-		container: 'body',
+		placement: 'top auto',
 		trigger: 'manual',
+		container: 'body',
 		content: question
 	});
 }
@@ -259,7 +272,7 @@ function initDesktopQuestionPopover(question){
 function desktopQuestionPopover(){
 	$desktopQuestionPopover.on('click', function(e) {
 		if($('.popover').is(':visible')){
-			console.log('hello');
+			
 		} else {
 			e.stopPropagation();
 
@@ -280,7 +293,6 @@ function desktopQuestionPopover(){
 }
 
 function infoModal(){
-	$('.modal-info').modal();
 	$('.info-button').click(function(){
 		$('.modal-info').modal();
 	});
@@ -288,15 +300,13 @@ function infoModal(){
 
 function appTooltips(state){
 	$('.ui-slider-handle:last-of-type').tooltip({
-		html: 'wtooltip',
 		placement: 'bottom',
-		title: 'Drag these handles to move colors',
+		title: 'Drag these sliders to make your colors big or small',
 		trigger: 'manual'
 	});
-	$('.ui-slider-swatch:first-of-type').tooltip({
-		html: 'wtooltip',
+	$('.ui-slider-swatch').tooltip({
 		placement: 'left',
-		title: 'Use these colordrops to pick colors',
+		title: 'Choose your colors here',
 		trigger: 'manual'
 	});
 
@@ -375,7 +385,7 @@ $(document).ready(function(){
 
 	// questionBox();
 
-	// infoModal();
+	infoModal();
 
 	back2Top();
 	

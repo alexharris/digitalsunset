@@ -69,7 +69,9 @@ a:hover, a:focus {
     position: fixed;
     right: 20px;
     top: 20px;
-    background-color: $yellow;
+    background-color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
     display: none;
     z-index: 200;
     font-size: 2em;
@@ -109,7 +111,7 @@ a:hover, a:focus {
 
 .full-size-icon {
     // padding-bottom: $itemSpacing;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .nav {
@@ -197,7 +199,7 @@ a:hover, a:focus {
 //  GALLERY
 
 .gallery {
-    background: none;
+    background: #fff;
     .white-row {
         margin: 0 auto;
     }

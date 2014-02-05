@@ -35,7 +35,7 @@ body.app {
 			.slider {
 			    height: 200px;
 			    width: 100%;
-			    margin: 0 auto;
+			    margin: 20px auto 0 auto;
 			    float: left;
 			    position: absolute;
 			    left: 8px;
@@ -53,7 +53,7 @@ body.app {
 
 .interior-button {
 	text-transform: uppercase;
-	margin: 20px 0;
+	margin: 10px 0 20px 0;
 	&:first-of-type {
 		margin-bottom: 30px;
 	}
@@ -73,32 +73,33 @@ body.app {
     left: 20px;
 }
 
-.slider {
-	position: relative;
-}
-
 .ui-slider-handle {
 	display: inline-block;
-    height: 20px;
+    height: 35px;
     width: 15%;
-    padding-bottom: 20px;
-    background: transparent url('/images/up-down.png') 0% 50% no-repeat;
     position: absolute;
     left: 3%;
+    .inner-handle {
+    	color: #000;
+    	text-align: left;
+    }
 }
 
 .ui-slider-swatch {
 	border: 1px solid #000;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	border-radius: 0 10px 10px 10px;
-    left: 550%;
+	width: 30px;
+	height: 30px;
+	border-radius: 0 15px 15px 15px;
+    left: 560%;
+    top: -20px;
+    transform: rotate(-45deg);
 }
 
 .modal-swatch {
-	height: 40px;
-	width: 100%;
+	height: 155px;
+	float: right;
+	width: 55px;
 }
 
 .modal {
@@ -109,20 +110,6 @@ body.app {
 	margin-bottom: 10px;
 }
 
-//  QUESTION BOX
-
-.question-box {
-	display: none;
-	color: #fff;
-	max-width: 100%;
-	padding: 10px 20px 20px 20px;
-	background-color: #444444;
-	position: absolute;
-	bottom: 60px;
-}
-
-.question-box-close {
-	text-align: right;
-	width: 100%;
-	padding: 4px 0;
+.modal-footer {
+	text-align: left;
 }
