@@ -206,8 +206,10 @@ function saveCanvas(){
 function startGradient(){
 	$('.start-gradient').click(function(){
 		$(this).hide();
+
 		$('.sunset-maker').show();
 		appTooltips('show');
+		// createGradient(colors);
 	});
 }
 
@@ -388,7 +390,5 @@ $(document).ready(function(){
 	infoModal();
 
 	back2Top();
-	
-	
 
 });

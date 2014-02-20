@@ -22,7 +22,7 @@ body.app {
 		}
 	}
 	.row {
-		padding: 20px 20px;
+		padding: 10px 20px;
 	}
 	.container {
 		width: 100%;
@@ -43,11 +43,16 @@ body.app {
 		}
 	}
 	.bottom-nav {
-		height: 60px;
+		height: 40px;
 		background-color: #929292;
 		position: fixed;
 		bottom: 0px;
 		width: 100%;
+		.nav li a {
+			font-size: 1.4em;
+			padding: 7px 15px;
+
+		}
 	}
 }
 
@@ -55,12 +60,16 @@ body.app {
 	text-transform: uppercase;
 	margin: 10px 0 20px 0;
 	&:first-of-type {
-		margin-bottom: 30px;
+		margin-bottom: 15px;
 	}
 }
 
+.start-gradient {
+	z-index: 1000;
+}
+
 .app-start-gradient {
-	padding: 48px 0 20px 0;
+	padding: 28px 0 20px 0;
 }
 
 .make-a-sunset {
@@ -68,9 +77,10 @@ body.app {
 	color: #FF8351;
 }
 
-#gradient {
+.gradient {
     width: 200px;
     left: 20px;
+    border: 1px solid #ff0;
 }
 
 .ui-slider-handle {

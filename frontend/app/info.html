@@ -9,6 +9,7 @@
         <title>digitalsunset</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -20,72 +21,30 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
-
     </head>
-    <body>
+    <body class="app">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-
         <div class="container">
-            <div class="header">
-                <ul class="nav">
-                    <li><a href="/" class="icon-smiley center-icon"></a></li>
-                    <li><a href="#" class="icon-question center-icon desktop-question"></a></li>
-                    <li><a href="#" class="icon-info center-icon"></a></li>
-                    <li><a href="/gallery.html" class="icon-images center-icon"></a></li>
-                </ul>
-                <div class="logo"><img src="images/digital-sunset-logo.png" /></div>
-                <div class="tag-line"><strong><em>*Catch a sunset, put it in your pocket*</em></strong></div>
-            </div>
-
             <div class="row center">
-                <div class="col-lg-12">
-                    <p>Some crap goes here about some stuff.</p>
+                <div class="col-md-12">
+                    <div class="start-gradient">
+                        <img class="app-start-gradient" src="images/app-start-gradient.png" /><br />
+                        <div class="make-a-sunset">Make a sunset.</div>
+                    </div>
                 </div>
-            </div>
-            <div class="row white-row">
-                <div class="col-lg-6 center">
-                    <h2>Some Stuff</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque elementum orci tempus commodo. Praesent faucibus non magna ac blandit. Duis non justo eu massa iaculis iaculis. Praesent fermentum tristique risus, ut fermentum justo sagittis sit amet. Sed id imperdiet leo. Vivamus dignissim tincidunt est, ac sodales turpis tempus a. Vivamus varius, leo vel sollicitudin porttitor, diam nisl viverra libero, sed suscipit est massa quis arcu.</p>
-                </div>
-                <div class="col-lg-6 center">
-                    <img src="images/phone.png" />
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-lg-6 center">
-                    <img src="images/phone.png" />
-                </div>
-                <div class="col-lg-6 center">
-                    <h2>Some Stuff</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque elementum orci tempus commodo. Praesent faucibus non magna ac blandit. Duis non justo eu massa iaculis iaculis. Praesent fermentum tristique risus, ut fermentum justo sagittis sit amet. Sed id imperdiet leo. Vivamus dignissim tincidunt est, ac sodales turpis tempus a. Vivamus varius, leo vel sollicitudin porttitor, diam nisl viverra libero, sed suscipit est massa quis arcu.</p>
-                </div>
-                <div class="clearfix"></div>
             </div>
             <div class="row center">
-            </div>
-            <div class="footer row black-row">
-                <section class="full-width-row">
-                    <div class="col-lg-6 center">
-                        <div class="icon-smiley full-size-icon"></div>
-                        <p>Digital Sunset is an app project by Alex Harris and Nicole Lavelle. It is simultaneously very important and totally useless.</p>
-                        <p>They are excited to see what you do with it. Tag your things with the hashtag #digitalsunsetapp so we can peep your gradients.</p>
+                <div class="col-md-12">
+                    <div class="sunset-maker">
+                        <div class="add-new interior-button btn"><span class="icon-plus"></span> new color</div>
+                        <br />
+                        <div class="slider"> </div>
                     </div>
-                    <div class="col-lg-6 center">
-                        <p>Some other info.</p>
-                        <p>digitalsunsetapp.com<br />
-                            #digitalsunsetapp</p>
-                        <p>© 2013 or whatever</p>
-                        <p>digitalsunset was made with heroku thing</p>
-                        <p>Also digitalsunsetapp.github.io</p>
-                    </div>
-                </section>
+                </div>
             </div>
-
         </div>
-
-
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>

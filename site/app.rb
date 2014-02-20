@@ -2,8 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './config/environments' #database configuration
 
-
-get '/', :user_agent => /iPhone/ do
+get '/', :user_agent => /(iPhone|Android|BlackBerry)/ do
   erb :"mobile/index", :layout => :mobile
 end
 
@@ -16,7 +15,7 @@ get '/app' do
   erb :"mobile/index", :layout => :mobile
 end
 
-get '/gallery', :user_agent => /iPhone/ do
+get '/gallery', :user_agent => /(iPhone|Android|BlackBerry)/ do
   @gradients = Gradient.order("created_at DESC")
   erb :"gallery/index", :layout => :mobile
 end

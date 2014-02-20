@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Alex Harris -- Development -- @alexharris
+    Nicole Lavelle -- Design and Creative Direction -- @nicolelavelle
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, uh...Sass, Sinatra, Heroku, Yeoman, Grunt, Bower, jQuery, jQuery MiniColors/Touch Punch/UI
