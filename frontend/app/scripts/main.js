@@ -209,6 +209,7 @@ function startGradient(){
 
 		$('.sunset-maker').show();
 		appTooltips('show');
+		$('body').delay('200').animate({ scrollTop: '0px' }, 'slow');
 		// createGradient(colors);
 	});
 }
@@ -390,5 +391,6 @@ $(document).ready(function(){
 	infoModal();
 
 	back2Top();
+
 
 });

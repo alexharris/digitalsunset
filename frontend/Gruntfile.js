@@ -128,14 +128,14 @@ module.exports = function (grunt) {
 
 
         // Mocha testing framework configuration options
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
-                }
-            }
-        },
+        // mocha: {
+        //     all: {
+        //         options: {
+        //             run: true,
+        //             urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
+        //         }
+        //     }
+        // },
 
 
 
@@ -389,10 +389,10 @@ module.exports = function (grunt) {
             ]);
         }
 
-        grunt.task.run([
-            'connect:test',
-            'mocha'
-        ]);
+        // grunt.task.run([
+        //     'connect:test',
+        //     'mocha'
+        // ]);
     });
 
     grunt.registerTask('build', [

@@ -2,17 +2,17 @@ body.app {
 	background: #fff;
 	margin: 0;
 	padding: 0;
-	// border-top: 0px solid #000;
+	border-top: 0px solid #000;
 	min-width: 320px;
 	max-height: 100%;
 }
 
 .app {
 	.header {
-		height: 53px;
+		height: 40px;
 		width: 100%;
-		background-color: #444;
-		padding: 10px;
+		background-color: #929292;
+		padding: 4px;
 		margin: 0;
 		.app-logo {
 			height: 33px;
@@ -58,9 +58,10 @@ body.app {
 
 .interior-button {
 	text-transform: uppercase;
-	margin: 10px 0 20px 0;
+	margin: 0 0 10px 0;
+	display: block;
 	&:first-of-type {
-		margin-bottom: 15px;
+		margin-bottom: 5px;
 	}
 }
 

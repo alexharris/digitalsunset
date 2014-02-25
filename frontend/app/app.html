@@ -6,10 +6,36 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>digitalsunset</title>
+        <title>Digital Sunset</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta name="apple-mobile-web-app-capable" content="yes">
+        <script type="text/javascript">
+            (function(document,navigator,standalone) {
+                // prevents links from apps from oppening in mobile safari
+                // this javascript must be the first script in your <head>
+                if ((standalone in navigator) && navigator[standalone]) {
+                    var curnode, location=document.location, stop=/^(a|html)$/i;
+                    document.addEventListener('click', function(e) {
+                        curnode=e.target;
+                        while (!(stop).test(curnode.nodeName)) {
+                            curnode=curnode.parentNode;
+                        }
+                        // Condidions to do this only on links to your own app
+                        // if you want all links, use if('href' in curnode) instead.
+                        if(
+                            'href' in curnode && // is a link
+                            (chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+                            (   !(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+                                chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+                        ) {
+                            e.preventDefault();
+                            location.href = curnode.href;
+                        }
+                    },false);
+                }
+            })(document,window.navigator,'standalone');
+        </script>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -33,16 +59,15 @@
             <div class="row center">
                 <div class="col-md-12">
                     <div class="start-gradient">
-                        <img class="app-start-gradient" src="images/app-start-gradient.svg" /><br />
+                        <img class="app-start-gradient" src="images/app-start-gradient.png" /><br />
                         <div class="make-a-sunset">Make a sunset.</div>
                     </div>
                     <div class="sunset-maker">
                         <div class="add-new interior-button btn"><span class="icon-plus"></span> new color</div>
-                        <br />
+                        
                         <div class="slider"> </div>
                         <canvas id="gradient" width="200" height="220"></canvas>
 
-                        <br />
                         <div class="interior-button btn save-button"><span class="icon-checkmark"></span> save sunset</div>
                     </div>
                 </div>

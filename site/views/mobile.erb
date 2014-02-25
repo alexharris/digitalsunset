@@ -14,6 +14,29 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="styles/vendor.css">
         <link rel="stylesheet" href="styles/main.css">
+        <!-- Fix safari installed webapp link behavior -->
+        <script type="text/javascript">
+            if(("standalone" in window.navigator) && window.navigator.standalone){
+
+                var noddy, remotes = false;
+
+                document.addEventListener('click', function(event) {
+
+                noddy = event.target;
+
+                while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+                noddy = noddy.parentNode;
+                }
+
+                if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+                {
+                event.preventDefault();
+                document.location.href = noddy.href;
+                }
+
+                },false);
+            }
+        </script>
         <script src="bower_components/modernizr/modernizr.js"></script>
     
     <body class="app">
@@ -25,6 +48,24 @@
                 <div class="app-logo"><img src="images/app-logo.png"></div>
             </div>
             <%= yield %>
+            <!-- INFO Modal -->
+            <div class="modal fade modal-info" tabindex="-1" role="dialog" aria-labelledby="save-modal-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="icon-smile full-size-icon center"></div>
+                            <p>Digital Sunset is an app project by Alex Harris and Nicole Lavelle. It is simultaneously very important and totally useless.</p>
+                            <p>We are excited to see what you do with it. Tag your things with the hashtag #digitalsunset so we can peep your gradients.</p>
+                            <p>digitalsunsetapp.com<br />#digitalsunset</p>
+                            <p>© 2014 mostly</p>
+                            <p>Digital Sunset was made with heroku thing</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-block btn-primary" data-dismiss="modal">Got it</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
             <div class="bottom-nav center">
                 <ul class="nav">
                     <li><a href="/" class="icon-sunset5 center-icon"></a></li>
