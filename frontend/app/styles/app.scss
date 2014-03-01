@@ -124,3 +124,9 @@ body.app {
 .modal-footer {
 	text-align: left;
 }
+
+// hide dumb iphone copy image thing 
+
+.modal-save .img {
+	-webkit-user-select: none;
+}
